@@ -10,33 +10,73 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as MkIndexRouteImport } from './routes/mk/index'
+import { Route as EnIndexRouteImport } from './routes/en/index'
+import { Route as MkSplatRouteImport } from './routes/mk/$'
+import { Route as EnSplatRouteImport } from './routes/en/$'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MkIndexRoute = MkIndexRouteImport.update({
+  id: '/mk/',
+  path: '/mk/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnIndexRoute = EnIndexRouteImport.update({
+  id: '/en/',
+  path: '/en/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MkSplatRoute = MkSplatRouteImport.update({
+  id: '/mk/$',
+  path: '/mk/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnSplatRoute = EnSplatRouteImport.update({
+  id: '/en/$',
+  path: '/en/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/en/$': typeof EnSplatRoute
+  '/mk/$': typeof MkSplatRoute
+  '/en/': typeof EnIndexRoute
+  '/mk/': typeof MkIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/en/$': typeof EnSplatRoute
+  '/mk/$': typeof MkSplatRoute
+  '/en': typeof EnIndexRoute
+  '/mk': typeof MkIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/en/$': typeof EnSplatRoute
+  '/mk/$': typeof MkSplatRoute
+  '/en/': typeof EnIndexRoute
+  '/mk/': typeof MkIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/en/$' | '/mk/$' | '/en/' | '/mk/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/en/$' | '/mk/$' | '/en' | '/mk'
+  id: '__root__' | '/' | '/en/$' | '/mk/$' | '/en/' | '/mk/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  EnSplatRoute: typeof EnSplatRoute
+  MkSplatRoute: typeof MkSplatRoute
+  EnIndexRoute: typeof EnIndexRoute
+  MkIndexRoute: typeof MkIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,12 +88,54 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/mk/': {
+      id: '/mk/'
+      path: '/mk'
+      fullPath: '/mk/'
+      preLoaderRoute: typeof MkIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en/': {
+      id: '/en/'
+      path: '/en'
+      fullPath: '/en/'
+      preLoaderRoute: typeof EnIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mk/$': {
+      id: '/mk/$'
+      path: '/mk/$'
+      fullPath: '/mk/$'
+      preLoaderRoute: typeof MkSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en/$': {
+      id: '/en/$'
+      path: '/en/$'
+      fullPath: '/en/$'
+      preLoaderRoute: typeof EnSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  EnSplatRoute: EnSplatRoute,
+  MkSplatRoute: MkSplatRoute,
+  EnIndexRoute: EnIndexRoute,
+  MkIndexRoute: MkIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
