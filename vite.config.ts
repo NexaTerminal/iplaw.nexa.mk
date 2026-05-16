@@ -7,10 +7,17 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
-// @cloudflare/vite-plugin builds from this — wrangler.jsonc main alone is insufficient.
 export default defineConfig({
   cloudflare: false,
   tanstackStart: {
     server: { entry: "server" },
+  },
+  vite: {
+    ssr: {
+      // Bundle every dep into the SSR output so the Vercel function (Edge or Node)
+      // has zero external imports to resolve at request time. Vite still keeps
+      // Node built-ins (node:* / fs / path / etc.) external automatically.
+      noExternal: true,
+    },
   },
 });
