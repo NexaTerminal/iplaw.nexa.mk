@@ -172,12 +172,14 @@
 .prose-article ul { list-style: disc; }
 .prose-article ol { list-style: decimal; }
 .prose-article li { margin: 0.35rem 0; }
-.prose-article a {
+.prose-article :where(p, li, h2, h3, h4, h5, h6, blockquote, td, th, dd, dt) a {
   color: var(--color-action);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
-.prose-article a:hover { color: var(--color-action-hover); }
+.prose-article :where(p, li, h2, h3, h4, h5, h6, blockquote, td, th, dd, dt) a:hover {
+  color: var(--color-action-hover);
+}
 .prose-article strong { color: var(--color-ink-900); font-weight: 600; }
 .prose-article blockquote {
   border-left: 3px solid var(--color-brand-300);

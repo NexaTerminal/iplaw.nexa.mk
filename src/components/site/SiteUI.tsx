@@ -55,10 +55,10 @@ export function Header({ locale, currentKey }: { locale: Locale; currentKey?: Ro
   const rightsActive = currentKey ? RIGHTS_ITEMS.includes(currentKey) : false;
   return (
     <header className="sticky top-0 z-40 bg-white/85 backdrop-blur border-b border-[var(--color-ink-200)]">
-      <div className="max-w-6xl mx-auto px-6 lg:px-8 flex items-center justify-between h-16 gap-4">
-        <a
-          href="https://nexa.mk"
-          aria-label={t(locale, "header.skipToNexa")}
+      <div className="max-w-6xl mx-auto px-6 lg:px-8 flex items-center h-16 gap-4">
+        <Link
+          to={pathFor("home", locale)}
+          aria-label={t(locale, "header.thisSiteHome")}
           className="flex items-center shrink-0"
         >
           <img
@@ -68,8 +68,8 @@ export function Header({ locale, currentKey }: { locale: Locale; currentKey?: Ro
             height={22}
             className="h-[22px] w-auto"
           />
-        </a>
-        <nav className="hidden lg:flex items-center gap-1 text-sm" aria-label="Primary">
+        </Link>
+        <nav className="hidden lg:flex items-center gap-1 text-sm ml-auto" aria-label="Primary">
           <Link
             to={pathFor("what-is-ip", locale)}
             className={`px-3 py-2 rounded-md text-[var(--color-ink-700)] hover:text-[var(--color-brand-700)] hover:bg-[var(--color-brand-50)] transition-colors ${
@@ -117,15 +117,15 @@ export function Header({ locale, currentKey }: { locale: Locale; currentKey?: Ro
             )}
           </div>
           <Link
-            to={pathFor("about", locale)}
+            to={pathFor("copyright", locale)}
             className={`px-3 py-2 rounded-md text-[var(--color-ink-700)] hover:text-[var(--color-brand-700)] hover:bg-[var(--color-brand-50)] transition-colors ${
-              currentKey === "about" ? "text-[var(--color-brand-700)] font-medium" : ""
+              currentKey === "copyright" ? "text-[var(--color-brand-700)] font-medium" : ""
             }`}
           >
             {t(locale, "nav.author")}
           </Link>
         </nav>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 lg:ml-2">
           <LanguageSwitcher locale={locale} currentKey={currentKey} />
           <Link
             to={pathFor("contact", locale)}
