@@ -29,59 +29,101 @@ import {
 } from "@/lib/content";
 
 // ─── Header ──────────────────────────────────────────────────────────────────
-const NAV_ITEMS: RouteKey[] = [
+const RIGHTS_ITEMS: RouteKey[] = [
+  "trademark",
+  "patent",
+  "industrial-design",
+  "geographical-indications",
+];
+
+const MOBILE_NAV_ITEMS: RouteKey[] = [
   "what-is-ip",
   "trademark",
   "patent",
   "industrial-design",
-  "copyright",
   "geographical-indications",
+  "copyright",
   "glossary",
   "faq",
+  "about",
   "contact",
 ];
 
 export function Header({ locale, currentKey }: { locale: Locale; currentKey?: RouteKey }) {
   const [open, setOpen] = useState(false);
+  const [rightsOpen, setRightsOpen] = useState(false);
+  const rightsActive = currentKey ? RIGHTS_ITEMS.includes(currentKey) : false;
   return (
     <header className="sticky top-0 z-40 bg-white/85 backdrop-blur border-b border-[var(--color-ink-200)]">
       <div className="max-w-6xl mx-auto px-6 lg:px-8 flex items-center justify-between h-16 gap-4">
-        <div className="flex items-center gap-3 min-w-0">
-          <a
-            href="https://nexa.mk"
-            aria-label={t(locale, "header.skipToNexa")}
-            className="flex items-center shrink-0"
-          >
-            <img
-              src="/nexa-logo-navbar.png"
-              alt="Nexa"
-              width={88}
-              height={32}
-              className="h-8 w-auto"
-            />
-          </a>
-          <span aria-hidden="true" className="text-[var(--color-ink-300)]">/</span>
-          <Link
-            to={pathFor("home", locale)}
-            aria-label={t(locale, "header.thisSiteHome")}
-            className="flex items-baseline gap-1 min-w-0"
-          >
-            <span className="font-bold text-[var(--color-ink-900)] tracking-tight text-base sm:text-lg truncate">iplaw</span>
-            <span className="text-[var(--color-ink-500)] text-xs sm:text-sm">.nexa.mk</span>
-          </Link>
-        </div>
+        <a
+          href="https://nexa.mk"
+          aria-label={t(locale, "header.skipToNexa")}
+          className="flex items-center shrink-0"
+        >
+          <img
+            src="/nexa-logo-navbar.png"
+            alt="Nexa"
+            width={62}
+            height={22}
+            className="h-[22px] w-auto"
+          />
+        </a>
         <nav className="hidden lg:flex items-center gap-1 text-sm" aria-label="Primary">
-          {NAV_ITEMS.slice(0, 6).map((k) => (
-            <Link
-              key={k}
-              to={pathFor(k, locale)}
-              className={`px-3 py-2 rounded-md text-[var(--color-ink-700)] hover:text-[var(--color-brand-700)] hover:bg-[var(--color-brand-50)] transition-colors ${
-                currentKey === k ? "text-[var(--color-brand-700)] font-medium" : ""
+          <Link
+            to={pathFor("what-is-ip", locale)}
+            className={`px-3 py-2 rounded-md text-[var(--color-ink-700)] hover:text-[var(--color-brand-700)] hover:bg-[var(--color-brand-50)] transition-colors ${
+              currentKey === "what-is-ip" ? "text-[var(--color-brand-700)] font-medium" : ""
+            }`}
+          >
+            {t(locale, "nav.what-is-ip")}
+          </Link>
+          <div
+            className="relative"
+            onMouseEnter={() => setRightsOpen(true)}
+            onMouseLeave={() => setRightsOpen(false)}
+          >
+            <button
+              type="button"
+              aria-haspopup="menu"
+              aria-expanded={rightsOpen}
+              onClick={() => setRightsOpen((v) => !v)}
+              className={`inline-flex items-center gap-1 px-3 py-2 rounded-md text-[var(--color-ink-700)] hover:text-[var(--color-brand-700)] hover:bg-[var(--color-brand-50)] transition-colors ${
+                rightsActive ? "text-[var(--color-brand-700)] font-medium" : ""
               }`}
             >
-              {t(locale, `nav.${k}`)}
-            </Link>
-          ))}
+              {t(locale, "nav.rights")}
+              <ChevronDown size={14} className={`transition-transform ${rightsOpen ? "rotate-180" : ""}`} />
+            </button>
+            {rightsOpen && (
+              <div
+                role="menu"
+                className="absolute left-0 top-full mt-1 min-w-[220px] rounded-lg bg-white shadow-lg ring-1 ring-[var(--color-ink-200)] py-1.5"
+              >
+                {RIGHTS_ITEMS.map((k) => (
+                  <Link
+                    key={k}
+                    to={pathFor(k, locale)}
+                    role="menuitem"
+                    onClick={() => setRightsOpen(false)}
+                    className={`block px-4 py-2 text-sm text-[var(--color-ink-700)] hover:bg-[var(--color-brand-50)] hover:text-[var(--color-brand-700)] ${
+                      currentKey === k ? "text-[var(--color-brand-700)] font-medium" : ""
+                    }`}
+                  >
+                    {t(locale, `nav.${k}`)}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+          <Link
+            to={pathFor("about", locale)}
+            className={`px-3 py-2 rounded-md text-[var(--color-ink-700)] hover:text-[var(--color-brand-700)] hover:bg-[var(--color-brand-50)] transition-colors ${
+              currentKey === "about" ? "text-[var(--color-brand-700)] font-medium" : ""
+            }`}
+          >
+            {t(locale, "nav.author")}
+          </Link>
         </nav>
         <div className="flex items-center gap-2">
           <LanguageSwitcher locale={locale} currentKey={currentKey} />
@@ -103,7 +145,7 @@ export function Header({ locale, currentKey }: { locale: Locale; currentKey?: Ro
       {open && (
         <nav className="lg:hidden border-t border-[var(--color-ink-200)] bg-white" aria-label="Mobile">
           <ul className="max-w-6xl mx-auto px-6 py-3 grid gap-1 text-sm">
-            {NAV_ITEMS.map((k) => (
+            {MOBILE_NAV_ITEMS.map((k) => (
               <li key={k}>
                 <Link
                   to={pathFor(k, locale)}
