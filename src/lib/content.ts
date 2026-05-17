@@ -2344,7 +2344,8 @@ const privMk: PageContent = {
   hero: "default",
   blocks: [
     { kind: "h2", text: "1. Контролор на податоци" },
-    { kind: "p", text: "Nexa (info@nexa.mk), Скопје, Северна Македонија. iplaw.nexa.mk е дел од Nexa екосистемот (https://nexa.mk)." },
+    { kind: "p", text: "Друштво за услуги НЕКСА АМД ДООЕЛ Скопје, Ул. Булевар Партизански Одреди бр. 102/2-14, Скопје – Карпош, Северна Македонија. Тел.: 078 534 258. Е-маил: info@nexa.mk. iplaw.nexa.mk е дел од Nexa екосистемот (https://nexa.mk)." },
+    { kind: "p", text: "Офицер за заштита на лични податоци (DPO): Мартин Бошкоски — info@nexa.mk." },
     { kind: "h2", text: "2. Кои податоци ги собираме" },
     { kind: "ul", items: [
       "Податоци кои свесно ги испраќате преку формите: име, е-маил, телефон, тема и порака.",
@@ -2400,7 +2401,8 @@ const privEn: PageContent = {
   hero: "default",
   blocks: [
     { kind: "h2", text: "1. Data controller" },
-    { kind: "p", text: "Nexa (info@nexa.mk), Skopje, North Macedonia. iplaw.nexa.mk is part of the Nexa ecosystem (https://nexa.mk)." },
+    { kind: "p", text: "Company for services NEKSA AMD DOOEL Skopje, Str. Bulevar Partizanski Odredi no. 102/2-14, Skopje – Karposh, North Macedonia. Phone: +389 78 534 258. Email: info@nexa.mk. iplaw.nexa.mk is part of the Nexa ecosystem (https://nexa.mk)." },
+    { kind: "p", text: "Data Protection Officer (DPO): Martin Boshkoski — info@nexa.mk." },
     { kind: "h2", text: "2. Data we collect" },
     { kind: "ul", items: [
       "Data you knowingly submit via forms: name, email, phone, topic and message.",
@@ -2456,7 +2458,7 @@ const termsMk: PageContent = {
   hero: "default",
   blocks: [
     { kind: "h2", text: "1. Оператор" },
-    { kind: "p", text: "Сајтот iplaw.nexa.mk е оперативно дел од Nexa екосистемот (https://nexa.mk). Контакт: info@nexa.mk." },
+    { kind: "p", text: "Сајтот iplaw.nexa.mk го управува Друштво за услуги НЕКСА АМД ДООЕЛ Скопје, со седиште на Ул. Булевар Партизански Одреди бр. 102/2-14, Скопје – Карпош, Северна Македонија. Тел.: 078 534 258. Е-маил: info@nexa.mk. iplaw.nexa.mk е дел од Nexa екосистемот (https://nexa.mk)." },
     { kind: "h2", text: "2. Намена на сајтот" },
     { kind: "p", text: "Информативен и едукативен ресурс за интелектуалната сопственост во Северна Македонија, со можност за препраќање на барања до проверени професионалци. Сајтот не претставува комерцијална реклама за конкретен адвокат или фирма." },
     { kind: "h2", text: "3. Не претставува правен совет" },
@@ -2488,7 +2490,7 @@ const termsEn: PageContent = {
   hero: "default",
   blocks: [
     { kind: "h2", text: "1. Operator" },
-    { kind: "p", text: "iplaw.nexa.mk is operated as part of the Nexa ecosystem (https://nexa.mk). Contact: info@nexa.mk." },
+    { kind: "p", text: "iplaw.nexa.mk is operated by Company for services NEKSA AMD DOOEL Skopje, registered at Str. Bulevar Partizanski Odredi no. 102/2-14, Skopje – Karposh, North Macedonia. Phone: +389 78 534 258. Email: info@nexa.mk. iplaw.nexa.mk is part of the Nexa ecosystem (https://nexa.mk)." },
     { kind: "h2", text: "2. Purpose of the site" },
     { kind: "p", text: "An informational and educational resource on intellectual property in North Macedonia, with optional lead-routing to verified professionals. The site is not commercial advertising for any specific lawyer or firm." },
     { kind: "h2", text: "3. Not legal advice" },
@@ -2537,7 +2539,7 @@ const aboutMk: PageContent = {
     { kind: "callout", tone: "info", title: "За професионалци", text: "Адвокат, сметководител или консултант? Придружете се на Nexa мрежата и добивајте насочени барања од сајтот." },
     { kind: "link", href: "https://nexa.mk/for-professionals", label: "Дознај повеќе за Super User програмата →" },
     { kind: "h2", text: "Контакт" },
-    { kind: "p", text: "info@nexa.mk · Скопје, Северна Македонија" },
+    { kind: "p", text: "Друштво за услуги НЕКСА АМД ДООЕЛ Скопје · Ул. Булевар Партизански Одреди бр. 102/2-14, Скопје – Карпош · тел. 078 534 258 · info@nexa.mk" },
   ],
   lastReviewed: LAST_REVIEWED,
 };
@@ -2568,7 +2570,7 @@ const aboutEn: PageContent = {
     { kind: "callout", tone: "info", title: "For professionals", text: "Lawyer, accountant or consultant? Join the Nexa network and receive routed leads from the site." },
     { kind: "link", href: "https://nexa.mk/for-professionals", label: "Learn more about the Super User programme →" },
     { kind: "h2", text: "Contact" },
-    { kind: "p", text: "info@nexa.mk · Skopje, North Macedonia" },
+    { kind: "p", text: "Company for services NEKSA AMD DOOEL Skopje · Str. Bulevar Partizanski Odredi no. 102/2-14, Skopje – Karposh · phone +389 78 534 258 · info@nexa.mk" },
   ],
   lastReviewed: LAST_REVIEWED,
 };

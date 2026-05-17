@@ -298,8 +298,10 @@ export function Footer({ locale }: { locale: Locale }) {
             {t(locale, "footer.contact.heading")}
           </h3>
           <ul className="mt-3 space-y-1 text-[var(--color-ink-700)]">
-            <li><a href="mailto:info@nexa.mk" className="hover:text-[var(--color-brand-700)]">info@nexa.mk</a></li>
+            <li className="text-[var(--color-ink-600)]">{t(locale, "footer.contact.entity")}</li>
             <li>{t(locale, "footer.contact.address")}</li>
+            <li><a href="tel:+38978534258" className="hover:text-[var(--color-brand-700)]">078 534 258</a></li>
+            <li><a href="mailto:info@nexa.mk" className="hover:text-[var(--color-brand-700)]">info@nexa.mk</a></li>
           </ul>
         </div>
       </div>
