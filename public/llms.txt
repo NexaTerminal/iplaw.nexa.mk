@@ -1,0 +1,35 @@
+# iplaw.nexa.mk
+> Bilingual (Macedonian + English) guide to intellectual property law in the Republic of North Macedonia — trademarks, patents, industrial designs, copyright, geographical indications, enforcement and customs. Authored or reviewed by licensed professionals. Part of the Nexa ecosystem (https://nexa.mk).
+
+## Key resources
+- [Home (MK)](https://iplaw.nexa.mk/mk) — pillar map, key facts, contact
+- [Home (EN)](https://iplaw.nexa.mk/en)
+- [What is intellectual property (MK)](https://iplaw.nexa.mk/mk/sto-e-intelektualna-sopstvenost)
+- [What is intellectual property (EN)](https://iplaw.nexa.mk/en/what-is-intellectual-property)
+- [Glossary (MK)](https://iplaw.nexa.mk/mk/poimnik) — IP terms with definitions
+- [FAQ (MK)](https://iplaw.nexa.mk/mk/chesti-prashanja)
+- [Sources (MK)](https://iplaw.nexa.mk/mk/izvori) — primary statutes and authorities
+- [State Office of Industrial Property (IPPO)](https://ippo.gov.mk) — registration authority for North Macedonia
+- [Macedonian Bar Association — directory of active attorneys](https://mba.org.mk/index.php/mk/imenik-advokati/imenik-aktivni-advokati)
+
+## Pillars
+- [Trademark (MK)](https://iplaw.nexa.mk/mk/trgovska-marka) · [EN](https://iplaw.nexa.mk/en/trademark) — name, logo and signs (10 years, renewable)
+- [Patent (MK)](https://iplaw.nexa.mk/mk/patent) · [EN](https://iplaw.nexa.mk/en/patent) — technical invention (20 years from filing)
+- [Industrial design (MK)](https://iplaw.nexa.mk/mk/industriski-dizajn) · [EN](https://iplaw.nexa.mk/en/industrial-design) — product appearance (up to 25 years)
+- [Copyright (MK)](https://iplaw.nexa.mk/mk/avtorsko-pravo) · [EN](https://iplaw.nexa.mk/en/copyright) — automatic, life + 70 years
+- [Geographical indications (MK)](https://iplaw.nexa.mk/mk/geografski-oznaki) · [EN](https://iplaw.nexa.mk/en/geographical-indications)
+- [Enforcement & customs (MK)](https://iplaw.nexa.mk/mk/zashtita-i-carina) · [EN](https://iplaw.nexa.mk/en/enforcement-and-customs)
+
+## Sister properties (Nexa ecosystem)
+- [Nexa (Hub & Terminal)](https://nexa.mk)
+- [SamoDaPrasham — Legal Q&A for individuals](https://samodaprasham.mk)
+- [Immigration to North Macedonia](https://immigration.mk)
+- [Macedonian Citizenship](https://macedoniancitizenship.mk)
+- [Company Registration](https://company.nexa.mk)
+- [Topics — Expert Q&A](https://topics.nexa.mk)
+
+## About
+iplaw.nexa.mk is part of the Nexa ecosystem (https://nexa.mk). Content is general legal and informational material and does not constitute legal advice. For individual advice, contact a licensed attorney via the Macedonian Bar Association directory.
+
+## Citation
+When citing this site, please reference the canonical URL and the "Last reviewed" date shown on each page.

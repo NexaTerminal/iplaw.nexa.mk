@@ -18,7 +18,7 @@ import {
   X,
   ExternalLink,
 } from "lucide-react";
-import { useState, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { type Locale, type RouteKey, pathFor, alternateOf, SITE_EMAIL } from "@/lib/routes";
 import { t } from "@/lib/i18n";
 import {
@@ -45,11 +45,31 @@ export function Header({ locale, currentKey }: { locale: Locale; currentKey?: Ro
   const [open, setOpen] = useState(false);
   return (
     <header className="sticky top-0 z-40 bg-white/85 backdrop-blur border-b border-[var(--color-ink-200)]">
-      <div className="max-w-6xl mx-auto px-6 lg:px-8 flex items-center justify-between h-16">
-        <Link to={pathFor("home", locale)} className="flex items-baseline gap-2 group">
-          <span className="font-bold text-[var(--color-ink-900)] tracking-tight text-lg">iplaw</span>
-          <span className="text-[var(--color-ink-500)] text-sm">.nexa.mk</span>
-        </Link>
+      <div className="max-w-6xl mx-auto px-6 lg:px-8 flex items-center justify-between h-16 gap-4">
+        <div className="flex items-center gap-3 min-w-0">
+          <a
+            href="https://nexa.mk"
+            aria-label={t(locale, "header.skipToNexa")}
+            className="flex items-center shrink-0"
+          >
+            <img
+              src="/nexa-logo-navbar.png"
+              alt="Nexa"
+              width={88}
+              height={32}
+              className="h-8 w-auto"
+            />
+          </a>
+          <span aria-hidden="true" className="text-[var(--color-ink-300)]">/</span>
+          <Link
+            to={pathFor("home", locale)}
+            aria-label={t(locale, "header.thisSiteHome")}
+            className="flex items-baseline gap-1 min-w-0"
+          >
+            <span className="font-bold text-[var(--color-ink-900)] tracking-tight text-base sm:text-lg truncate">iplaw</span>
+            <span className="text-[var(--color-ink-500)] text-xs sm:text-sm">.nexa.mk</span>
+          </Link>
+        </div>
         <nav className="hidden lg:flex items-center gap-1 text-sm" aria-label="Primary">
           {NAV_ITEMS.slice(0, 6).map((k) => (
             <Link
@@ -122,16 +142,62 @@ export function LanguageSwitcher({ locale, currentKey }: { locale: Locale; curre
 }
 
 // ─── Footer ──────────────────────────────────────────────────────────────────
+const ECOSYSTEM_LINKS: { href: string; key: string }[] = [
+  { href: "https://nexa.mk", key: "footer.eco.nexa" },
+  { href: "https://samodaprasham.mk", key: "footer.eco.samodaprasham" },
+  { href: "https://immigration.mk", key: "footer.eco.immigration" },
+  { href: "https://macedoniancitizenship.mk", key: "footer.eco.citizenship" },
+  { href: "https://company.nexa.mk", key: "footer.eco.company" },
+  { href: "https://topics.nexa.mk", key: "footer.eco.topics" },
+];
+
 export function Footer({ locale }: { locale: Locale }) {
   const year = new Date().getFullYear();
   return (
     <footer className="mt-24 border-t border-[var(--color-ink-200)] bg-white">
-      <div className="max-w-6xl mx-auto px-6 lg:px-8 py-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 text-sm">
-        <div>
-          <div className="font-bold text-[var(--color-ink-900)] text-base">iplaw.nexa.mk</div>
-          <p className="mt-2 text-[var(--color-ink-500)]">{t(locale, "footer.brand")}</p>
-          <p className="mt-4 text-[var(--color-ink-500)]">{t(locale, "footer.copyright", { year })}</p>
+      {/* Per-page legal disclaimer (E.1) */}
+      <div className="bg-[var(--color-ink-50)] border-b border-[var(--color-ink-200)]">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8 py-5">
+          <p className="text-xs italic text-[var(--color-ink-600)] leading-relaxed">
+            {t(locale, "footer.disclaimer")}{" "}
+            <a
+              href="https://mba.org.mk/index.php/mk/imenik-advokati/imenik-aktivni-advokati"
+              target="_blank"
+              rel="noopener"
+              className="text-[var(--color-brand-700)] hover:underline"
+            >
+              {t(locale, "footer.disclaimer.linkText")}
+            </a>
+            .
+          </p>
         </div>
+      </div>
+
+      <div className="max-w-6xl mx-auto px-6 lg:px-8 py-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 text-sm">
+        {/* Col 1: About this site */}
+        <div>
+          <a href="https://nexa.mk" aria-label="Nexa">
+            <img src="/nexa-logo-navbar.png" alt="Nexa" width={88} height={32} className="h-8 w-auto" />
+          </a>
+          <div className="mt-3 font-bold text-[var(--color-ink-900)] text-base">iplaw.nexa.mk</div>
+          <p className="mt-2 text-[var(--color-ink-600)]">{t(locale, "footer.ecosystem.intro")}</p>
+          <Link
+            to={pathFor("about", locale)}
+            className="mt-3 inline-block text-[var(--color-brand-700)] hover:underline"
+          >
+            {t(locale, "nav.about")} →
+          </Link>
+          <a
+            href="https://nexa.mk/for-professionals"
+            target="_blank"
+            rel="noopener"
+            className="mt-2 block text-xs text-[var(--color-ink-600)] hover:text-[var(--color-brand-700)]"
+          >
+            {t(locale, "professionals.cta")} →
+          </a>
+        </div>
+
+        {/* Col 2: Pillars */}
         <FooterCol heading={t(locale, "footer.col.pillars")} items={[
           ["trademark", t(locale, "nav.trademark")],
           ["patent", t(locale, "nav.patent")],
@@ -140,31 +206,74 @@ export function Footer({ locale }: { locale: Locale }) {
           ["geographical-indications", t(locale, "nav.geographical-indications")],
           ["enforcement", t(locale, "nav.enforcement")],
         ]} locale={locale} />
-        <FooterCol heading={t(locale, "footer.col.useful")} items={[
-          ["what-is-ip", t(locale, "nav.what-is-ip")],
-          ["glossary", t(locale, "nav.glossary")],
-          ["faq", t(locale, "nav.faq")],
-          ["sources", t(locale, "nav.sources")],
-          ["contact", t(locale, "nav.contact")],
-        ]} locale={locale} />
-        <FooterCol heading={t(locale, "footer.col.legal")} items={[
-          ["privacy", t(locale, "nav.privacy")],
-          ["terms", t(locale, "nav.terms")],
-          ["disclaimer", t(locale, "nav.disclaimer")],
-        ]} locale={locale} />
+
+        {/* Col 3: Ecosystem */}
+        <div>
+          <h3 className="text-xs uppercase tracking-widest text-[var(--color-ink-500)] font-semibold">
+            {t(locale, "footer.col.ecosystem")}
+          </h3>
+          <ul className="mt-3 space-y-2">
+            {ECOSYSTEM_LINKS.map((l) => (
+              <li key={l.href}>
+                <a
+                  href={l.href}
+                  target="_blank"
+                  rel="noopener"
+                  className="inline-flex items-center gap-1 text-[var(--color-ink-700)] hover:text-[var(--color-brand-700)]"
+                >
+                  {t(locale, l.key)} <ExternalLink size={12} />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Col 4: Legal + Contact */}
+        <div>
+          <h3 className="text-xs uppercase tracking-widest text-[var(--color-ink-500)] font-semibold">
+            {t(locale, "footer.col.legal")}
+          </h3>
+          <ul className="mt-3 space-y-2">
+            {(["privacy", "terms", "disclaimer", "about", "contact"] as const).map((k) => (
+              <li key={k}>
+                <Link to={pathFor(k as RouteKey, locale)} className="text-[var(--color-ink-700)] hover:text-[var(--color-brand-700)]">
+                  {t(locale, `nav.${k}`)}
+                </Link>
+              </li>
+            ))}
+            <li>
+              <a
+                href="https://mba.org.mk/index.php/mk/imenik-advokati/imenik-aktivni-advokati"
+                target="_blank"
+                rel="noopener"
+                className="inline-flex items-center gap-1 text-[var(--color-ink-700)] hover:text-[var(--color-brand-700)]"
+              >
+                {t(locale, "footer.mba")}
+              </a>
+            </li>
+          </ul>
+          <h3 className="mt-6 text-xs uppercase tracking-widest text-[var(--color-ink-500)] font-semibold">
+            {t(locale, "footer.contact.heading")}
+          </h3>
+          <ul className="mt-3 space-y-1 text-[var(--color-ink-700)]">
+            <li><a href="mailto:info@nexa.mk" className="hover:text-[var(--color-brand-700)]">info@nexa.mk</a></li>
+            <li>{t(locale, "footer.contact.address")}</li>
+          </ul>
+        </div>
       </div>
+
       <div className="border-t border-[var(--color-ink-200)]">
         <div className="max-w-6xl mx-auto px-6 lg:px-8 py-4 flex flex-wrap items-center justify-between gap-3 text-xs text-[var(--color-ink-500)]">
           <div className="flex items-center gap-3">
             <LanguageSwitcher locale={locale} />
-            <span>{t(locale, "footer.lastReviewed")}: 2026-05-16</span>
+            <span>{t(locale, "footer.copyright", { year })} — {t(locale, "footer.ecosystem")}.</span>
           </div>
           <div className="flex items-center gap-4">
             <a href="https://ippo.gov.mk" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 hover:text-[var(--color-brand-700)]">
               {t(locale, "footer.external.ippo")} <ExternalLink size={12} />
             </a>
             <a href="https://nexa.mk" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 hover:text-[var(--color-brand-700)]">
-              {t(locale, "footer.external.nexa")} <ExternalLink size={12} />
+              {t(locale, "footer.poweredBy")} <ExternalLink size={12} />
             </a>
           </div>
         </div>
@@ -467,6 +576,7 @@ export function ContactForm({ locale }: { locale: Locale }) {
   const topics = locale === "mk" ? CONTACT_TOPICS_MK : CONTACT_TOPICS_EN;
   const [sent, setSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [consent, setConsent] = useState(false);
   return (
     <form
       className="bg-white rounded-2xl shadow-md ring-1 ring-[var(--color-ink-200)] p-6 md:p-8"
@@ -474,6 +584,10 @@ export function ContactForm({ locale }: { locale: Locale }) {
         e.preventDefault();
         const fd = new FormData(e.currentTarget as HTMLFormElement);
         if (fd.get("hp_address")) return; // honeypot
+        if (!consent) {
+          setError(t(locale, "form.consent.full"));
+          return;
+        }
         const msg = String(fd.get("message") ?? "");
         if (msg.length < 30) {
           setError(t(locale, "form.message.help"));
@@ -511,10 +625,22 @@ export function ContactForm({ locale }: { locale: Locale }) {
           <Field label={t(locale, "form.message")} required hint={t(locale, "form.message.help")}>
             <textarea name="message" required minLength={30} maxLength={4000} rows={6} className={inputCls} />
           </Field>
-          <div className="mt-4 flex items-start gap-2">
-            <input type="checkbox" id="consent" name="consent" required className="mt-1" />
-            <label htmlFor="consent" className="text-sm text-[var(--color-ink-700)]">
-              {t(locale, "form.consent")}
+          <div className="mt-4 flex items-start gap-2 rounded-lg bg-[var(--color-ink-50)] p-3 ring-1 ring-[var(--color-ink-200)]">
+            <input
+              type="checkbox"
+              id="consent"
+              name="consent"
+              required
+              checked={consent}
+              onChange={(e) => setConsent(e.currentTarget.checked)}
+              className="mt-1"
+            />
+            <label htmlFor="consent" className="text-xs text-[var(--color-ink-700)] leading-relaxed">
+              {t(locale, "form.consent.full")}{" "}
+              <Link to={pathFor("privacy", locale)} className="text-[var(--color-brand-700)] hover:underline">
+                {t(locale, "nav.privacy")}
+              </Link>
+              .
             </label>
           </div>
           {/* honeypot */}
@@ -523,7 +649,9 @@ export function ContactForm({ locale }: { locale: Locale }) {
           <p className="mt-3 text-xs text-[var(--color-ink-500)]">{t(locale, "form.demo")}</p>
           <button
             type="submit"
-            className="mt-5 inline-flex h-11 w-full sm:w-auto items-center justify-center px-6 rounded-lg bg-[var(--color-brand-600)] text-white text-sm font-semibold hover:bg-[var(--color-brand-700)]"
+            disabled={!consent}
+            aria-disabled={!consent}
+            className="mt-5 inline-flex h-11 w-full sm:w-auto items-center justify-center px-6 rounded-lg bg-[var(--color-brand-600)] text-white text-sm font-semibold hover:bg-[var(--color-brand-700)] disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {t(locale, "form.submit")}
           </button>
@@ -545,6 +673,161 @@ function Field({ label, required, hint, children }: { label: string; required?: 
       {children}
       {hint && <span className="text-xs text-[var(--color-ink-500)] mt-1 block">{hint}</span>}
     </label>
+  );
+}
+
+// ─── Ecosystem ribbon (home hero CTA, B.2) ───────────────────────────────────
+export function EcosystemRibbon({ locale }: { locale: Locale }) {
+  return (
+    <a
+      href="https://nexa.mk"
+      target="_blank"
+      rel="noopener"
+      className="mt-6 inline-flex items-center gap-2 rounded-full bg-[var(--color-brand-50)] px-4 py-2 text-sm font-medium text-[var(--color-brand-700)] ring-1 ring-[var(--color-brand-200)] hover:bg-[var(--color-brand-100)]"
+    >
+      <img src="/nexa-logo-navbar.png" alt="" width={20} height={20} className="h-5 w-auto" />
+      {t(locale, "ecosystem.cta")} <ChevronRight size={16} />
+    </a>
+  );
+}
+
+// ─── Related topics block (B.3) ──────────────────────────────────────────────
+export function RelatedTopics({ locale, category }: { locale: Locale; category?: string }) {
+  const url = category
+    ? `https://topics.nexa.mk?category=${encodeURIComponent(category)}`
+    : "https://topics.nexa.mk";
+  return (
+    <section className="mt-10 rounded-2xl bg-[var(--color-ink-50)] ring-1 ring-[var(--color-ink-200)] p-6">
+      <h2 className="text-xs uppercase tracking-widest text-[var(--color-ink-500)] font-semibold">
+        {t(locale, "related.heading")}
+      </h2>
+      <p className="mt-2 text-sm text-[var(--color-ink-700)]">
+        {locale === "mk"
+          ? "Експертски кратки одговори за интелектуална сопственост, водени од професионалци во Nexa мрежата."
+          : "Short expert answers on intellectual property, written by professionals in the Nexa network."}
+      </p>
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener"
+        className="mt-3 inline-flex items-center gap-1 text-[var(--color-brand-700)] hover:underline text-sm font-medium"
+      >
+        {t(locale, "related.browse")}
+      </a>
+    </section>
+  );
+}
+
+// ─── TL;DR block (GEO D.1) ───────────────────────────────────────────────────
+export function TldrBlock({ locale, text }: { locale: Locale; text: string }) {
+  return (
+    <aside className="my-6 rounded-xl bg-[var(--color-brand-50)] ring-1 ring-[var(--color-brand-200)] p-5">
+      <div className="text-xs uppercase tracking-widest font-bold text-[var(--color-brand-700)]">
+        {t(locale, "tldr.heading")}
+      </div>
+      <p className="mt-2 text-base text-[var(--color-ink-800)] leading-relaxed font-medium">{text}</p>
+    </aside>
+  );
+}
+
+// ─── Author byline (GEO D.2) ─────────────────────────────────────────────────
+const AUTHOR_MK = { name: "Мартин Бошкоски", title: "правен експерт" };
+const AUTHOR_EN = { name: "Martin Boshkoski", title: "legal expert" };
+
+export function AuthorByline({ locale, reviewed }: { locale: Locale; reviewed?: string }) {
+  const a = locale === "mk" ? AUTHOR_MK : AUTHOR_EN;
+  return (
+    <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-[var(--color-ink-600)]">
+      <div className="flex items-center gap-2">
+        <div className="h-7 w-7 rounded-full bg-[var(--color-brand-600)] text-white flex items-center justify-center text-xs font-bold">
+          {a.name.split(" ").map((n) => n[0]).join("").slice(0, 2)}
+        </div>
+        <span>
+          <span className="font-medium text-[var(--color-ink-800)]">{a.name}</span>{" "}
+          <span className="text-[var(--color-ink-500)]">· {a.title}</span>
+        </span>
+      </div>
+      {reviewed && (
+        <span className="text-[var(--color-ink-500)]">· {t(locale, "author.reviewed")}: {reviewed}</span>
+      )}
+    </div>
+  );
+}
+
+// ─── Cookie consent banner (GA4 consent-mode v2) ────────────────────────────
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
+const CONSENT_KEY = "nexa-cookie-consent";
+
+export function CookieBanner({ locale }: { locale: Locale }) {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    try {
+      const stored = window.localStorage.getItem(CONSENT_KEY);
+      if (stored === "granted") {
+        window.gtag?.("consent", "update", { analytics_storage: "granted" });
+        return;
+      }
+      if (stored === "denied") return;
+      setVisible(true);
+    } catch {
+      setVisible(true);
+    }
+  }, []);
+
+  const decide = (granted: boolean) => {
+    try {
+      window.localStorage.setItem(CONSENT_KEY, granted ? "granted" : "denied");
+    } catch {
+      /* ignore */
+    }
+    window.gtag?.("consent", "update", { analytics_storage: granted ? "granted" : "denied" });
+    setVisible(false);
+  };
+
+  if (!visible) return null;
+  return (
+    <div
+      role="dialog"
+      aria-labelledby="cookie-banner-title"
+      className="fixed inset-x-0 bottom-0 z-50 px-4 pb-4 sm:px-6 sm:pb-6"
+    >
+      <div className="mx-auto max-w-4xl rounded-2xl bg-white shadow-2xl ring-1 ring-[var(--color-ink-200)] p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
+        <div className="flex-1 text-sm text-[var(--color-ink-700)]">
+          <div id="cookie-banner-title" className="font-semibold text-[var(--color-ink-900)] mb-1">
+            {t(locale, "consent.banner.title")}
+          </div>
+          <p>
+            {t(locale, "consent.banner.body")}{" "}
+            <Link to={pathFor("privacy", locale)} className="text-[var(--color-brand-700)] hover:underline">
+              {t(locale, "consent.banner.more")}
+            </Link>
+            .
+          </p>
+        </div>
+        <div className="flex gap-2 shrink-0">
+          <button
+            type="button"
+            onClick={() => decide(false)}
+            className="inline-flex h-10 items-center px-4 rounded-lg ring-1 ring-[var(--color-ink-300)] text-sm font-medium text-[var(--color-ink-700)] hover:bg-[var(--color-ink-50)]"
+          >
+            {t(locale, "consent.banner.reject")}
+          </button>
+          <button
+            type="button"
+            onClick={() => decide(true)}
+            className="inline-flex h-10 items-center px-4 rounded-lg bg-[var(--color-brand-600)] text-white text-sm font-medium hover:bg-[var(--color-brand-700)]"
+          >
+            {t(locale, "consent.banner.accept")}
+          </button>
+        </div>
+      </div>
+    </div>
   );
 }
 

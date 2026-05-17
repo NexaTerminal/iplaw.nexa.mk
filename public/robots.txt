@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_build/
+
+Sitemap: https://iplaw.nexa.mk/sitemap.xml

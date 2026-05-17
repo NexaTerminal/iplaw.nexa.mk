@@ -9,10 +9,15 @@ import {
   ContactBox,
   ContactForm,
   ContactSidebar,
+  CookieBanner,
+  EcosystemRibbon,
+  RelatedTopics,
+  TldrBlock,
+  AuthorByline,
   FAQItem,
   Pill,
 } from "./SiteUI";
-import { type Locale, type RouteKey, pathFor, alternateOf, SITE_URL } from "@/lib/routes";
+import { type Locale, type RouteKey, pathFor, alternateOf, ROUTES, SITE_URL } from "@/lib/routes";
 import { t } from "@/lib/i18n";
 import {
   CONTENT,
@@ -22,6 +27,10 @@ import {
   FAQ_EN,
 } from "@/lib/content";
 
+const AUTHOR_URL = SITE_URL + "/mk/za-nas";
+const AUTHOR_NAME_MK = "Мартин Бошкоски";
+const AUTHOR_NAME_EN = "Martin Boshkoski";
+
 export function PageShell({ locale, currentKey, children }: { locale: Locale; currentKey?: RouteKey; children: React.ReactNode }) {
   return (
     <>
@@ -29,6 +38,7 @@ export function PageShell({ locale, currentKey, children }: { locale: Locale; cu
       <Header locale={locale} currentKey={currentKey} />
       <main id="main">{children}</main>
       <Footer locale={locale} />
+      <CookieBanner locale={locale} />
     </>
   );
 }
@@ -74,8 +84,16 @@ export function PageRenderer({ locale, routeKey }: { locale: Locale; routeKey: R
               {page.lede}
             </p>
           )}
-          {page.lastReviewed && !isHome && (
-            <div className="mt-5"><Pill tone="neutral">{t(locale, "pill.lastReviewed", { date: page.lastReviewed })}</Pill></div>
+          {isHome && <EcosystemRibbon locale={locale} />}
+          {!isHome && (
+            <div className="mt-5 flex flex-wrap items-center gap-3">
+              {page.lastReviewed && (
+                <Pill tone="neutral">{t(locale, "pill.lastReviewed", { date: page.lastReviewed })}</Pill>
+              )}
+            </div>
+          )}
+          {!isHome && page.lastReviewed && (
+            <AuthorByline locale={locale} reviewed={page.lastReviewed} />
           )}
           {isHome && (
             <>
@@ -117,9 +135,13 @@ export function PageRenderer({ locale, routeKey }: { locale: Locale; routeKey: R
 
       {/* Article body */}
       <article className="max-w-3xl mx-auto px-6 lg:px-8 prose-article">
+        {!isHome && page.tldr && <TldrBlock locale={locale} text={page.tldr} />}
         {page.blocks.map((b, i) => (
           <BlockView key={i} block={b} locale={locale} page={page} />
         ))}
+        {!isHome && !isContact && !isGlossary && !isFaq && page.blocks.length >= 6 && (
+          <RelatedTopics locale={locale} category={page.pillarFamily} />
+        )}
 
         {/* Contact special */}
         {isContact && (
@@ -134,7 +156,9 @@ export function PageRenderer({ locale, routeKey }: { locale: Locale; routeKey: R
           <dl className="mt-8 divide-y divide-[var(--color-ink-200)]">
             {(locale === "mk" ? GLOSSARY_MK : GLOSSARY_EN).map((g) => (
               <div key={g.term} className="py-4">
-                <dt className="font-semibold text-[var(--color-ink-900)]">{g.term}</dt>
+                <dt className="font-semibold text-[var(--color-ink-900)]">
+                  <dfn>{g.term}</dfn>
+                </dt>
                 <dd className="mt-1 text-sm text-[var(--color-ink-700)]">
                   {g.definition}{" "}
                   {g.link && <Link to={g.link} className="text-[var(--color-action)] hover:underline">→</Link>}
@@ -165,14 +189,148 @@ export function PageRenderer({ locale, routeKey }: { locale: Locale; routeKey: R
   );
 }
 
-// Build head meta tags for a given page.
+// Build head meta tags + JSON-LD scripts for a given page.
 export function buildHead(locale: Locale, routeKey: RouteKey) {
   const page = CONTENT[locale][routeKey];
-  if (!page) return { meta: [], links: [] };
+  if (!page) return { meta: [], links: [], scripts: [] };
   const canonical = `${SITE_URL}${pathFor(routeKey, locale)}`;
   const altOther = `${SITE_URL}${alternateOf(routeKey, locale)}`;
   const altDefault = `${SITE_URL}${pathFor(routeKey, "mk")}`;
   const title = page.seoTitle ?? `${page.title} | iplaw.nexa.mk`;
+  const ogLocale = locale === "mk" ? "mk_MK" : "en_US";
+  const ogLocaleAlt = locale === "mk" ? "en_US" : "mk_MK";
+  const ogImage = `${SITE_URL}/nexa-logo-navbar.png`;
+  const authorName = locale === "mk" ? AUTHOR_NAME_MK : AUTHOR_NAME_EN;
+
+  const isHome = routeKey === "home";
+  const isFaq = routeKey === "faq";
+  const isContact = routeKey === "contact";
+  const isPillarOrSub = !isHome && !isFaq && !isContact && routeKey !== "glossary" && routeKey !== "sources"
+    && routeKey !== "privacy" && routeKey !== "terms" && routeKey !== "disclaimer" && routeKey !== "about";
+
+  const scripts: Array<{ type: string; children: string }> = [];
+
+  // BreadcrumbList on every non-home page
+  if (!isHome) {
+    const items: Array<{ name: string; item: string }> = [
+      { name: t(locale, "nav.home"), item: `${SITE_URL}${pathFor("home", locale)}` },
+    ];
+    if (page.pillarFamily && page.pillarFamily !== routeKey) {
+      items.push({
+        name: t(locale, `nav.${page.pillarFamily}`),
+        item: `${SITE_URL}${pathFor(page.pillarFamily as RouteKey, locale)}`,
+      });
+    }
+    items.push({ name: page.title, item: canonical });
+    scripts.push({
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: items.map((it, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          name: it.name,
+          item: it.item,
+        })),
+      }),
+    });
+  }
+
+  if (isHome) {
+    scripts.push({
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "LegalService",
+        name: "iplaw.nexa.mk — Intellectual Property Guide",
+        url: canonical,
+        inLanguage: locale,
+        areaServed: { "@type": "Country", name: "North Macedonia" },
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Skopje",
+          addressCountry: "MK",
+        },
+        publisher: { "@type": "Organization", name: "Nexa", url: "https://nexa.mk" },
+        knowsAbout: [
+          "Trademark law",
+          "Patent law",
+          "Industrial design",
+          "Copyright",
+          "Geographical indications",
+          "IP enforcement",
+        ],
+      }),
+    });
+  }
+
+  if (isPillarOrSub) {
+    scripts.push({
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: page.title,
+        description: page.seoDescription,
+        inLanguage: locale,
+        image: ogImage,
+        author: { "@type": "Person", name: authorName, url: AUTHOR_URL },
+        publisher: {
+          "@type": "Organization",
+          name: "Nexa",
+          url: "https://nexa.mk",
+          logo: { "@type": "ImageObject", url: ogImage },
+        },
+        datePublished: page.lastReviewed ?? "2026-05-16",
+        dateModified: page.lastReviewed ?? "2026-05-16",
+        mainEntityOfPage: canonical,
+      }),
+    });
+  }
+
+  if (isFaq) {
+    const groups = locale === "mk" ? FAQ_MK : FAQ_EN;
+    const qa = groups.flatMap((g) =>
+      g.items.map((it) => ({
+        "@type": "Question",
+        name: it.q,
+        acceptedAnswer: { "@type": "Answer", text: it.a },
+      })),
+    );
+    scripts.push({
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: qa,
+      }),
+    });
+  }
+
+  if (isContact) {
+    scripts.push({
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        url: canonical,
+        inLanguage: locale,
+        publisher: { "@type": "Organization", name: "Nexa", url: "https://nexa.mk" },
+      }),
+    });
+  }
+
+  // hreflang link tags for all alternate locales of this route
+  const links = [
+    { rel: "canonical", href: canonical },
+    { rel: "alternate", hrefLang: locale, href: canonical },
+    { rel: "alternate", hrefLang: locale === "mk" ? "en" : "mk", href: altOther },
+    { rel: "alternate", hrefLang: "x-default", href: altDefault },
+  ];
+  // Touch ROUTES so it's used (kept for future expansion to other locales)
+  void ROUTES;
+
   return {
     meta: [
       { title },
@@ -180,16 +338,18 @@ export function buildHead(locale: Locale, routeKey: RouteKey) {
       { name: "keywords", content: (page.keywords ?? []).join(", ") },
       { property: "og:title", content: title },
       { property: "og:description", content: page.seoDescription },
-      { property: "og:type", content: "website" },
+      { property: "og:type", content: isPillarOrSub ? "article" : "website" },
       { property: "og:url", content: canonical },
-      { property: "og:locale", content: locale === "mk" ? "mk_MK" : "en_US" },
+      { property: "og:image", content: ogImage },
+      { property: "og:locale", content: ogLocale },
+      { property: "og:locale:alternate", content: ogLocaleAlt },
+      { property: "og:site_name", content: "iplaw.nexa.mk" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: page.seoDescription },
+      { name: "twitter:image", content: ogImage },
     ],
-    links: [
-      { rel: "canonical", href: canonical },
-      { rel: "alternate", hrefLang: locale, href: canonical },
-      { rel: "alternate", hrefLang: locale === "mk" ? "en" : "mk", href: altOther },
-      { rel: "alternate", hrefLang: "x-default", href: altDefault },
-    ],
+    links,
+    scripts,
   };
 }

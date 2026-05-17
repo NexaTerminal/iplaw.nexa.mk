@@ -29,6 +29,7 @@ export type RouteKey =
   | "glossary"
   | "faq"
   | "contact"
+  | "about"
   | "sources"
   | "privacy"
   | "terms"
@@ -93,6 +94,7 @@ export const ROUTES: Record<RouteKey, { mk: string; en: string }> = {
   "glossary": { mk: "poimnik", en: "glossary" },
   "faq": { mk: "chesti-prashanja", en: "faq" },
   "contact": { mk: "kontakt", en: "contact" },
+  "about": { mk: "za-nas", en: "about" },
   "sources": { mk: "izvori", en: "sources" },
   "privacy": { mk: "privatnost", en: "privacy" },
   "terms": { mk: "uslovi", en: "terms" },

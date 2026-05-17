@@ -4,11 +4,43 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+
+const DEFAULT_TITLE = "iplaw.nexa.mk — Intellectual Property Guide for North Macedonia · Nexa";
+const DEFAULT_DESCRIPTION =
+  "Bilingual guide to trademarks, patents, industrial designs, copyright and geographical indications in North Macedonia. Part of the Nexa ecosystem.";
+const DEFAULT_OG_IMAGE = "https://iplaw.nexa.mk/nexa-logo-navbar.png";
+const SITE_URL = "https://iplaw.nexa.mk";
+
+const ORGANIZATION_JSONLD = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Nexa",
+  url: "https://nexa.mk",
+  logo: "https://iplaw.nexa.mk/nexa-logo-navbar.png",
+  sameAs: [
+    "https://samodaprasham.mk",
+    "https://immigration.mk",
+    "https://macedoniancitizenship.mk",
+    "https://company.nexa.mk",
+    "https://iplaw.nexa.mk",
+    "https://topics.nexa.mk",
+  ],
+});
+
+const WEBSITE_JSONLD = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "iplaw.nexa.mk",
+  url: SITE_URL,
+  inLanguage: ["mk", "en"],
+  publisher: { "@type": "Organization", name: "Nexa", url: "https://nexa.mk" },
+});
 
 function NotFoundComponent() {
   return (
@@ -21,7 +53,7 @@ function NotFoundComponent() {
         </p>
         <div className="mt-6">
           <Link
-            to="/"
+            to="/mk"
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
             Go home
@@ -56,7 +88,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
             Try again
           </button>
           <a
-            href="/"
+            href="/mk"
             className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
           >
             Go home
@@ -72,23 +104,42 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Nexa IPLaw SEO Boost creates SEO and GEO-optimized websites for iplaw.nexa.mk." },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Nexa IPLaw SEO Boost creates SEO and GEO-optimized websites for iplaw.nexa.mk." },
+      { title: DEFAULT_TITLE },
+      { name: "description", content: DEFAULT_DESCRIPTION },
+      { name: "author", content: "Nexa" },
+      { name: "publisher", content: "Nexa" },
+      { name: "geo.region", content: "MK" },
+      { name: "geo.placename", content: "Skopje" },
+      { property: "og:site_name", content: "iplaw.nexa.mk" },
+      { property: "og:title", content: DEFAULT_TITLE },
+      { property: "og:description", content: DEFAULT_DESCRIPTION },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Lovable App" },
-      { name: "twitter:description", content: "Nexa IPLaw SEO Boost creates SEO and GEO-optimized websites for iplaw.nexa.mk." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7648f7b7-be95-4a73-9be8-b98ab45b606a/id-preview-15aca545--d5108600-1b8b-441a-8deb-d4e520cb04fc.lovable.app-1778938095210.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7648f7b7-be95-4a73-9be8-b98ab45b606a/id-preview-15aca545--d5108600-1b8b-441a-8deb-d4e520cb04fc.lovable.app-1778938095210.png" },
+      { property: "og:image", content: DEFAULT_OG_IMAGE },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: DEFAULT_TITLE },
+      { name: "twitter:description", content: DEFAULT_DESCRIPTION },
+      { name: "twitter:image", content: DEFAULT_OG_IMAGE },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "icon", href: "/nexa-logo-navbar.png", type: "image/png" },
+    ],
+    scripts: [
       {
-        rel: "stylesheet",
-        href: appCss,
+        async: true,
+        src: "https://www.googletagmanager.com/gtag/js?id=G-GXFMQC848F",
+      },
+      {
+        children:
+          "window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('consent','default',{analytics_storage:'denied'});gtag('config','G-GXFMQC848F',{anonymize_ip:true});",
+      },
+      {
+        type: "application/ld+json",
+        children: ORGANIZATION_JSONLD,
+      },
+      {
+        type: "application/ld+json",
+        children: WEBSITE_JSONLD,
       },
     ],
   }),
@@ -99,8 +150,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: React.ReactNode }) {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const lang = pathname.startsWith("/en") ? "en" : "mk";
   return (
-    <html lang="en">
+    <html lang={lang}>
       <head>
         <HeadContent />
       </head>

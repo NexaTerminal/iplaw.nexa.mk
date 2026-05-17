@@ -40,6 +40,7 @@ export type PageContent = {
   // pillarFamily — for sibling navigator + breadcrumbs at the bottom of sub-pages
   pillarFamily?: "trademark" | "patent" | "industrial-design" | "copyright";
   blocks: Block[];
+  tldr?: string;
   lastReviewed?: string;
 };
 
@@ -213,6 +214,8 @@ const whatIsIpMk: PageContent = {
     { kind: "siblings" },
     { kind: "contactBox" },
   ],
+  tldr:
+    "Интелектуалната сопственост (ИС) во Македонија опфаќа индустриска сопственост (трговски марки, патенти, дизајн, географски ознаки) и авторско право. Регистрацијата ја води ДЗИС (ippo.gov.mk); авторското право е автоматско.",
   lastReviewed: LAST_REVIEWED,
 };
 
@@ -274,6 +277,8 @@ const whatIsIpEn: PageContent = {
     { kind: "siblings" },
     { kind: "contactBox" },
   ],
+  tldr:
+    "Intellectual property (IP) in North Macedonia covers industrial property (trademarks, patents, designs, geographical indications) and copyright. Registration is handled by IPPO (ippo.gov.mk); copyright arises automatically.",
   lastReviewed: LAST_REVIEWED,
 };
 
@@ -427,6 +432,8 @@ const tmMk: PageContent = {
     { kind: "siblings" },
     { kind: "contactBox" },
   ],
+  tldr:
+    "Трговска марка во Македонија се регистрира во ДЗИС, важи 10 години и се обновува неограничено. Постапката трае обично 8–14 месеци; основна такса започнува околу неколку илјади денари за една класа.",
   lastReviewed: LAST_REVIEWED,
 };
 
@@ -572,6 +579,8 @@ const tmEn: PageContent = {
     { kind: "siblings" },
     { kind: "contactBox" },
   ],
+  tldr:
+    "A trademark in North Macedonia is registered at IPPO, lasts 10 years and is renewable indefinitely. The procedure typically takes 8–14 months; basic fees start at a few thousand denars for one class.",
   lastReviewed: LAST_REVIEWED,
 };
 
@@ -1074,6 +1083,8 @@ const patentMk: PageContent = {
     { kind: "siblings" },
     { kind: "contactBox" },
   ],
+  tldr:
+    "Патентот штити технички пронајдок 20 години од денот на пријавата. Се регистрира во ДЗИС; за меѓународна заштита се користат PCT и Европската патентна конвенција (EPC).",
   lastReviewed: LAST_REVIEWED,
 };
 
@@ -1192,6 +1203,8 @@ const patentEn: PageContent = {
     { kind: "siblings" },
     { kind: "contactBox" },
   ],
+  tldr:
+    "A patent protects a technical invention for 20 years from the filing date. It is registered at IPPO; international protection is sought via PCT and the European Patent Convention (EPC).",
   lastReviewed: LAST_REVIEWED,
 };
 
@@ -1386,6 +1399,8 @@ const designMk: PageContent = {
     { kind: "siblings" },
     { kind: "contactBox" },
   ],
+  tldr:
+    "Индустрискиот дизајн го штити надворешниот изглед на производот. Заштитата трае 5 години и се обновува до 25 години; меѓународна заштита преку Хашкиот систем.",
   lastReviewed: LAST_REVIEWED,
 };
 
@@ -1459,6 +1474,8 @@ const designEn: PageContent = {
     { kind: "siblings" },
     { kind: "contactBox" },
   ],
+  tldr:
+    "An industrial design protects the external appearance of a product. Protection lasts 5 years, renewable up to 25 years; international protection via the Hague System.",
   lastReviewed: LAST_REVIEWED,
 };
 
@@ -1635,6 +1652,8 @@ const copyMk: PageContent = {
     { kind: "siblings" },
     { kind: "contactBox" },
   ],
+  tldr:
+    "Авторското право во Македонија настанува автоматски при создавањето на делото — без регистрација. Трае целиот живот на авторот и 70 години по неговата смрт.",
   lastReviewed: LAST_REVIEWED,
 };
 
@@ -1732,6 +1751,8 @@ const copyEn: PageContent = {
     { kind: "siblings" },
     { kind: "contactBox" },
   ],
+  tldr:
+    "Copyright in North Macedonia arises automatically upon creation of the work — no registration required. It lasts for the author life plus 70 years.",
   lastReviewed: LAST_REVIEWED,
 };
 
@@ -1900,6 +1921,8 @@ const giMk: PageContent = {
     { kind: "siblings" },
     { kind: "contactBox" },
   ],
+  tldr:
+    "Географските ознаки штитат назив поврзан со подрачје (вино, сирење, рачни изработки) и не можат да станат сопственост на едно лице — се користат од сите производители од подрачјето.",
   lastReviewed: LAST_REVIEWED,
 };
 
@@ -1950,6 +1973,8 @@ const giEn: PageContent = {
     { kind: "siblings" },
     { kind: "contactBox" },
   ],
+  tldr:
+    "Geographical indications protect a name linked to a specific area (wine, cheese, crafts) and cannot become any single person property — they are used by all producers from that area.",
   lastReviewed: LAST_REVIEWED,
 };
 
@@ -2000,6 +2025,8 @@ const enfMk: PageContent = {
     { kind: "siblings" },
     { kind: "contactBox" },
   ],
+  tldr:
+    "При повреда на права од интелектуална сопственост можна е граѓанска тужба, царинска интервенција (запирање на стока) и казнено гонење за тешки случаи на фалсификување.",
   lastReviewed: LAST_REVIEWED,
 };
 
@@ -2049,6 +2076,8 @@ const enfEn: PageContent = {
     { kind: "siblings" },
     { kind: "contactBox" },
   ],
+  tldr:
+    "When IP rights are infringed you can pursue civil action, customs intervention (suspension of goods) and criminal prosecution for serious counterfeiting cases.",
   lastReviewed: LAST_REVIEWED,
 };
 
@@ -2310,21 +2339,54 @@ const privMk: PageContent = {
   routeKey: "privacy",
   title: "Политика за приватност",
   seoTitle: "Политика за приватност | iplaw.nexa.mk",
-  seoDescription: "Кои податоци ги собираме, зошто, колку време ги чуваме и кои се вашите права.",
+  seoDescription: "Кои податоци ги собираме, зошто, колку време ги чуваме и кои се вашите права согласно GDPR.",
   h1: "Политика за приватност",
   hero: "default",
   blocks: [
-    { kind: "h2", text: "Кои податоци ги собираме" },
-    { kind: "p", text: "Само податоците кои свесно ни ги испраќате преку контакт-формата: име, е-маил, телефон, тема и порака. Збирно — статистика на посетеност преку Plausible (без колачиња)." },
-    { kind: "h2", text: "Зошто ги обработуваме" },
-    { kind: "p", text: "За да одговориме на вашата порака и да ве упатиме кај соодветен стручен. Правен основ: легитимен интерес и согласност (чл. 6 ст. 1 т. (а) и (ф) GDPR)." },
-    { kind: "h2", text: "Колку време ги чуваме" },
-    { kind: "p", text: "Преписките се чуваат најмногу 24 месеци од последниот контакт, освен ако законска обврска не побара подолго чување." },
-    { kind: "h2", text: "Кој ги обработува" },
-    { kind: "p", text: "Nexa Terminal. За испраќање на е-маили користиме надворешен сервис (Resend/SendGrid). За статистика користиме Plausible Analytics." },
-    { kind: "h2", text: "Вашите права" },
-    { kind: "ul", items: ["Пристап до личните податоци.", "Исправка или бришење.", "Ограничување на обработката.", "Преносливост.", "Поднесување приговор кај Агенцијата за заштита на лични податоци."] },
-    { kind: "p", text: "Барања за остварување на правата испратете на info@nexa.mk." },
+    { kind: "h2", text: "1. Контролор на податоци" },
+    { kind: "p", text: "Nexa (info@nexa.mk), Скопје, Северна Македонија. iplaw.nexa.mk е дел од Nexa екосистемот (https://nexa.mk)." },
+    { kind: "h2", text: "2. Кои податоци ги собираме" },
+    { kind: "ul", items: [
+      "Податоци кои свесно ги испраќате преку формите: име, е-маил, телефон, тема и порака.",
+      "Стандардни серверски логови: IP адреса, user agent, временски печат — за безбедност и заштита од злоупотреба.",
+      "Google Analytics 4 (само ако дадете согласност преку банерот за колачиња): псевдонимизиран идентификатор, посетени страници, извор на сообраќај, агрегирани мерки.",
+    ] },
+    { kind: "h2", text: "3. Цели на обработката" },
+    { kind: "ul", items: [
+      "Одговор на вашите прашања.",
+      "Препраќање на барања до проверени правни/професионални партнери во Nexa екосистемот соодветни на темата.",
+      "Подобрување на содржината и работата на сајтот.",
+    ] },
+    { kind: "h2", text: "4. Правен основ" },
+    { kind: "ul", items: [
+      "Согласност (чл. 6 ст. 1 т. (а) GDPR) — за испраќање преку формите и за аналитички колачиња.",
+      "Легитимен интерес (чл. 6 ст. 1 т. (ф) GDPR) — за серверски логови и заштита од злоупотреба.",
+    ] },
+    { kind: "h2", text: "5. Примачи на податоци" },
+    { kind: "ul", items: [
+      "Проверени партнери во Nexa екосистемот (адвокати, сметководители, консултанти) на кои се препраќа барањето.",
+      "Сервис за е-маил (Resend).",
+      "Хостинг провајдер (Cloudflare/Vercel).",
+      "Google Analytics 4 (Google Ireland Ltd.) — само со согласност.",
+    ] },
+    { kind: "h2", text: "6. Период на чување" },
+    { kind: "p", text: "Преписки и барања — до 24 месеци по затворање на барањето, освен ако не побарате претходно бришење. Серверски логови — 90 дена. Аналитички податоци — според стандардното задржување на GA4 (14 месеци)." },
+    { kind: "h2", text: "7. Вашите права" },
+    { kind: "ul", items: [
+      "Право на пристап, исправка, бришење и ограничување на обработката.",
+      "Право на приговор и преносливост.",
+      "Право да повлечете дадена согласност во секое време.",
+      "Право на жалба до Агенцијата за заштита на лични податоци на Северна Македонија.",
+    ] },
+    { kind: "p", text: "За остварување на правата: info@nexa.mk." },
+    { kind: "h2", text: "8. Колачиња" },
+    { kind: "p", text: "Користиме строго неопходни колачиња за работа на сајтот и (опционално, со ваша согласност) Google Analytics 4. Согласноста ја давате/повлекувате преку банерот." },
+    { kind: "h2", text: "9. Меѓународни преноси" },
+    { kind: "p", text: "Google Analytics и некои даватели на услуги се надвор од ЕЕА. Преносите се потпираат на стандардните договорни клаузули (SCCs) на Европската комисија." },
+    { kind: "h2", text: "10. Ажурирање" },
+    { kind: "p", text: "Политиката може да биде ажурирана. Датумот на последниот преглед е прикажан подолу." },
+    { kind: "h2", text: "11. Контакт" },
+    { kind: "p", text: "info@nexa.mk" },
   ],
   lastReviewed: LAST_REVIEWED,
 };
@@ -2333,21 +2395,54 @@ const privEn: PageContent = {
   routeKey: "privacy",
   title: "Privacy policy",
   seoTitle: "Privacy policy | iplaw.nexa.mk",
-  seoDescription: "What data we collect, why, how long we keep it, and your rights.",
+  seoDescription: "What personal data we collect, why, how long we retain it, and your rights under GDPR.",
   h1: "Privacy policy",
   hero: "default",
   blocks: [
-    { kind: "h2", text: "What we collect" },
-    { kind: "p", text: "Only the data you knowingly submit via the contact form: name, email, phone, topic and message. Aggregate site analytics via Plausible (no cookies)." },
-    { kind: "h2", text: "Why we process it" },
-    { kind: "p", text: "To answer your message and refer you to the right expert. Legal basis: legitimate interest and consent (Art. 6(1)(a) and (f) GDPR)." },
-    { kind: "h2", text: "How long we keep it" },
-    { kind: "p", text: "Correspondence is retained for up to 24 months from last contact, unless a legal obligation requires longer." },
-    { kind: "h2", text: "Who processes it" },
-    { kind: "p", text: "Nexa Terminal. For email delivery we use an external service (Resend/SendGrid). For analytics we use Plausible." },
-    { kind: "h2", text: "Your rights" },
-    { kind: "ul", items: ["Access to personal data.", "Rectification or erasure.", "Restriction of processing.", "Data portability.", "Complaint to the Personal Data Protection Agency."] },
-    { kind: "p", text: "Submit requests to info@nexa.mk." },
+    { kind: "h2", text: "1. Data controller" },
+    { kind: "p", text: "Nexa (info@nexa.mk), Skopje, North Macedonia. iplaw.nexa.mk is part of the Nexa ecosystem (https://nexa.mk)." },
+    { kind: "h2", text: "2. Data we collect" },
+    { kind: "ul", items: [
+      "Data you knowingly submit via forms: name, email, phone, topic and message.",
+      "Standard server logs: IP address, user agent, timestamps — for security and abuse prevention.",
+      "Google Analytics 4 (only with your cookie-banner consent): pseudonymous identifier, pages viewed, traffic source, aggregate metrics.",
+    ] },
+    { kind: "h2", text: "3. Purposes of processing" },
+    { kind: "ul", items: [
+      "Answering your inquiries.",
+      "Routing your request to a verified legal/professional partner within the Nexa ecosystem matching the topic.",
+      "Improving the site's content and operation.",
+    ] },
+    { kind: "h2", text: "4. Legal basis" },
+    { kind: "ul", items: [
+      "Consent (Art. 6(1)(a) GDPR) — for form submissions and for analytics cookies.",
+      "Legitimate interest (Art. 6(1)(f) GDPR) — for server logs and abuse prevention.",
+    ] },
+    { kind: "h2", text: "5. Recipients" },
+    { kind: "ul", items: [
+      "Verified partners within the Nexa ecosystem (lawyers, accountants, consultants) to whom requests are routed.",
+      "Email service (Resend).",
+      "Hosting provider (Cloudflare/Vercel).",
+      "Google Analytics 4 (Google Ireland Ltd.) — with consent only.",
+    ] },
+    { kind: "h2", text: "6. Retention" },
+    { kind: "p", text: "Correspondence and requests — up to 24 months after the inquiry is closed, unless you ask for earlier deletion. Server logs — 90 days. Analytics — GA4 default retention (14 months)." },
+    { kind: "h2", text: "7. Your rights" },
+    { kind: "ul", items: [
+      "Access, rectification, erasure, restriction of processing.",
+      "Objection and portability.",
+      "Withdraw consent at any time.",
+      "Lodge a complaint with the Personal Data Protection Agency of North Macedonia.",
+    ] },
+    { kind: "p", text: "To exercise these rights: info@nexa.mk." },
+    { kind: "h2", text: "8. Cookies" },
+    { kind: "p", text: "We use strictly necessary cookies for site operation and (optionally, with your consent) Google Analytics 4. You can grant or withdraw consent via the cookie banner." },
+    { kind: "h2", text: "9. International transfers" },
+    { kind: "p", text: "Google Analytics and some processors are located outside the EEA. Transfers rely on the European Commission's Standard Contractual Clauses (SCCs)." },
+    { kind: "h2", text: "10. Updates" },
+    { kind: "p", text: "This policy may be updated. The last-reviewed date is shown below." },
+    { kind: "h2", text: "11. Contact" },
+    { kind: "p", text: "info@nexa.mk" },
   ],
   lastReviewed: LAST_REVIEWED,
 };
@@ -2355,19 +2450,31 @@ const privEn: PageContent = {
 const termsMk: PageContent = {
   routeKey: "terms",
   title: "Услови за користење",
-  seoTitle: "Услови | iplaw.nexa.mk",
-  seoDescription: "Услови за користење на iplaw.nexa.mk.",
+  seoTitle: "Услови за користење | iplaw.nexa.mk",
+  seoDescription: "Услови за користење на iplaw.nexa.mk — дел од Nexa екосистемот.",
   h1: "Услови за користење",
   hero: "default",
   blocks: [
-    { kind: "h2", text: "Намена" },
-    { kind: "p", text: "iplaw.nexa.mk е јавен информативен ресурс. Содржината не претставува правен совет и не воспоставува однос адвокат–клиент." },
-    { kind: "h2", text: "Гаранција" },
-    { kind: "p", text: "Се обидуваме да ги одржуваме страниците ажурни според актуелното законодавство. Сепак, не гарантираме целосна точност во секој момент. Корисниците сами носат одговорност за деловни одлуки." },
-    { kind: "h2", text: "Интелектуална сопственост" },
-    { kind: "p", text: "Содржината на сајтот е сопственост на Nexa Terminal или на нивни лиценцори. Дозволено е делумно копирање и цитирање со јасно навединување на изворот." },
-    { kind: "h2", text: "Надлежност" },
-    { kind: "p", text: "Овие услови се толкуваат според законите на Република Северна Македонија. Надлежни се судовите во Скопје." },
+    { kind: "h2", text: "1. Оператор" },
+    { kind: "p", text: "Сајтот iplaw.nexa.mk е оперативно дел од Nexa екосистемот (https://nexa.mk). Контакт: info@nexa.mk." },
+    { kind: "h2", text: "2. Намена на сајтот" },
+    { kind: "p", text: "Информативен и едукативен ресурс за интелектуалната сопственост во Северна Македонија, со можност за препраќање на барања до проверени професионалци. Сајтот не претставува комерцијална реклама за конкретен адвокат или фирма." },
+    { kind: "h2", text: "3. Не претставува правен совет" },
+    { kind: "p", text: "Содржината е општа информација и не претставува правен совет. Корисникот не воспоставува адвокатско-клиентски однос со Nexa преку прегледување на страниците. Секој однос со професионалец контактиран преку сајтот се воспоставува посебно и надвор од Nexa." },
+    { kind: "h2", text: "4. Препраќање на барања (Lead routing)" },
+    { kind: "p", text: "Барањата испратени преку контакт-формата можат да бидат препратени до проверен Nexa Super User (адвокат, сметководител, консултант) според темата. Партнерот може да ве контактира во врска со побараните услуги. Согласноста можете да ја повлечете во секое време на info@nexa.mk." },
+    { kind: "h2", text: "5. Интелектуална сопственост" },
+    { kind: "p", text: "Содржината е © Nexa освен ако не е назначено поинаку. Цитирање е дозволено со јасно навединување на изворот и линк назад. Комерцијално препубликување не е дозволено без писмена согласност." },
+    { kind: "h2", text: "6. Надворешни линкови" },
+    { kind: "p", text: "Сајтот линкува кон надворешни извори (закони, ДЗИС именик, владини регистри, именик на АКРСМ). Nexa не одговара за содржината на надворешни сајтови." },
+    { kind: "h2", text: "7. Ограничување на одговорност" },
+    { kind: "p", text: "До максимална мера дозволена со македонското законодавство, Nexa не одговара за одлуки или дејства преземени врз основа на содржината на сајтот." },
+    { kind: "h2", text: "8. Измени" },
+    { kind: "p", text: "Овие услови можат да бидат ажурирани. Датумот на последниот преглед е прикажан подолу." },
+    { kind: "h2", text: "9. Меродавно право" },
+    { kind: "p", text: "Република Северна Македонија. Надлежни се судовите во Скопје." },
+    { kind: "h2", text: "10. Контакт" },
+    { kind: "p", text: "info@nexa.mk" },
   ],
   lastReviewed: LAST_REVIEWED,
 };
@@ -2375,19 +2482,93 @@ const termsMk: PageContent = {
 const termsEn: PageContent = {
   routeKey: "terms",
   title: "Terms of use",
-  seoTitle: "Terms | iplaw.nexa.mk",
-  seoDescription: "Terms of use for iplaw.nexa.mk.",
+  seoTitle: "Terms of use | iplaw.nexa.mk",
+  seoDescription: "Terms of use for iplaw.nexa.mk — part of the Nexa ecosystem.",
   h1: "Terms of use",
   hero: "default",
   blocks: [
-    { kind: "h2", text: "Purpose" },
-    { kind: "p", text: "iplaw.nexa.mk is a public information resource. Content is not legal advice and does not create an attorney–client relationship." },
-    { kind: "h2", text: "No warranty" },
-    { kind: "p", text: "We strive to keep pages aligned with current legislation. We do not, however, warrant complete accuracy at every moment. Users are responsible for their own business decisions." },
-    { kind: "h2", text: "Intellectual property" },
-    { kind: "p", text: "Site content is owned by Nexa Terminal or its licensors. Partial copying and quotation are allowed with clear source attribution." },
-    { kind: "h2", text: "Jurisdiction" },
-    { kind: "p", text: "These terms are governed by the laws of the Republic of North Macedonia. The courts of Skopje have jurisdiction." },
+    { kind: "h2", text: "1. Operator" },
+    { kind: "p", text: "iplaw.nexa.mk is operated as part of the Nexa ecosystem (https://nexa.mk). Contact: info@nexa.mk." },
+    { kind: "h2", text: "2. Purpose of the site" },
+    { kind: "p", text: "An informational and educational resource on intellectual property in North Macedonia, with optional lead-routing to verified professionals. The site is not commercial advertising for any specific lawyer or firm." },
+    { kind: "h2", text: "3. Not legal advice" },
+    { kind: "p", text: "Content is general information and does not constitute legal advice. Viewing the site does not create a lawyer-client relationship between you and Nexa. Any relationship with a professional contacted via the site is formed separately and outside Nexa." },
+    { kind: "h2", text: "4. Lead routing" },
+    { kind: "p", text: "Contact-form submissions may be routed to a verified Nexa Super User (lawyer, accountant, consultant) matching the topic, who may contact you regarding the requested services. You can withdraw consent at any time by emailing info@nexa.mk." },
+    { kind: "h2", text: "5. Intellectual property" },
+    { kind: "p", text: "Content is © Nexa unless otherwise noted. Quoting is permitted with clear attribution and a link back. Commercial republishing requires prior written consent." },
+    { kind: "h2", text: "6. Third-party links" },
+    { kind: "p", text: "The site links to external sources (laws, IPPO directory, government registries, MBA directory). Nexa is not responsible for external content." },
+    { kind: "h2", text: "7. Limitation of liability" },
+    { kind: "p", text: "To the maximum extent permitted under Macedonian law, Nexa is not liable for decisions or actions taken based on information on the site." },
+    { kind: "h2", text: "8. Changes" },
+    { kind: "p", text: "These terms may be updated. The last-reviewed date is shown below." },
+    { kind: "h2", text: "9. Governing law" },
+    { kind: "p", text: "Republic of North Macedonia. Disputes: the competent courts in Skopje." },
+    { kind: "h2", text: "10. Contact" },
+    { kind: "p", text: "info@nexa.mk" },
+  ],
+  lastReviewed: LAST_REVIEWED,
+};
+
+const aboutMk: PageContent = {
+  routeKey: "about",
+  title: "За нас",
+  seoTitle: "За iplaw.nexa.mk и Nexa екосистемот",
+  seoDescription: "iplaw.nexa.mk е дел од Nexa екосистемот — оперативен слој за бизнисот во Македонија.",
+  h1: "За нас",
+  eyebrow: "Nexa екосистем",
+  hero: "default",
+  blocks: [
+    { kind: "h2", text: "Што е Nexa" },
+    { kind: "p", text: "Nexa е оперативниот слој за бизнисот во Северна Македонија — терминал за правни и сметководствени документи, AI помош, провери на усогласеност и пристап до проверени професионалци. Седиштето на Nexa е во Скопје." },
+    { kind: "p", text: "Низ Nexa екосистемот, лица и компании наоѓаат разбирлива правна и регулаторна содржина на македонски и англиски јазик, поврзана со алатки и луѓе кои можат да ги придвижат работите напред." },
+    { kind: "h2", text: "Зошто iplaw.nexa.mk постои" },
+    { kind: "p", text: "Постојниот водич за интелектуална сопственост во Македонија е расфрлан, тежок за читање и често застарен. iplaw.nexa.mk го собира на едно место со стандардни постапки, такси, рокови и образци, ажуриран и двојазичен — за да можете да донесете информирана одлука пред да платите за совет." },
+    { kind: "h2", text: "Други Nexa имоти" },
+    { kind: "ul", items: [
+      "Nexa (Hub & Терминал) — https://nexa.mk",
+      "SamoDaPrasham — правни прашања за граѓани — https://samodaprasham.mk",
+      "Имиграција во С. Македонија — https://immigration.mk",
+      "Македонско државјанство — https://macedoniancitizenship.mk",
+      "Регистрација на компанија — https://company.nexa.mk",
+      "Topics — експертски одговори — https://topics.nexa.mk",
+    ] },
+    { kind: "callout", tone: "info", title: "За професионалци", text: "Адвокат, сметководител или консултант? Придружете се на Nexa мрежата и добивајте насочени барања од сајтот." },
+    { kind: "link", href: "https://nexa.mk/for-professionals", label: "Дознај повеќе за Super User програмата →" },
+    { kind: "h2", text: "Контакт" },
+    { kind: "p", text: "info@nexa.mk · Скопје, Северна Македонија" },
+  ],
+  lastReviewed: LAST_REVIEWED,
+};
+
+const aboutEn: PageContent = {
+  routeKey: "about",
+  title: "About",
+  seoTitle: "About iplaw.nexa.mk and the Nexa ecosystem",
+  seoDescription: "iplaw.nexa.mk is part of the Nexa ecosystem — the operational layer for business in North Macedonia.",
+  h1: "About",
+  eyebrow: "Nexa ecosystem",
+  hero: "default",
+  blocks: [
+    { kind: "h2", text: "What is Nexa" },
+    { kind: "p", text: "Nexa is the operational layer for business in North Macedonia — a terminal for legal and accounting documents, AI assistance, compliance checks and access to verified professionals. Nexa is based in Skopje." },
+    { kind: "p", text: "Across the Nexa ecosystem, individuals and companies find clear legal and regulatory content in Macedonian and English, connected to the tools and people who can move things forward." },
+    { kind: "h2", text: "Why this site exists" },
+    { kind: "p", text: "The existing guide to intellectual property in North Macedonia is scattered, hard to read, and often out of date. iplaw.nexa.mk consolidates it in one place with the standard procedures, fees, deadlines and forms, kept up to date and bilingual — so you can make an informed decision before paying for advice." },
+    { kind: "h2", text: "Other Nexa properties" },
+    { kind: "ul", items: [
+      "Nexa (Hub & Terminal) — https://nexa.mk",
+      "SamoDaPrasham — Legal Q&A for individuals — https://samodaprasham.mk",
+      "Immigration to N. Macedonia — https://immigration.mk",
+      "Macedonian Citizenship — https://macedoniancitizenship.mk",
+      "Company Registration — https://company.nexa.mk",
+      "Topics — Expert Q&A — https://topics.nexa.mk",
+    ] },
+    { kind: "callout", tone: "info", title: "For professionals", text: "Lawyer, accountant or consultant? Join the Nexa network and receive routed leads from the site." },
+    { kind: "link", href: "https://nexa.mk/for-professionals", label: "Learn more about the Super User programme →" },
+    { kind: "h2", text: "Contact" },
+    { kind: "p", text: "info@nexa.mk · Skopje, North Macedonia" },
   ],
   lastReviewed: LAST_REVIEWED,
 };
@@ -2395,16 +2576,14 @@ const termsEn: PageContent = {
 const discMk: PageContent = {
   routeKey: "disclaimer",
   title: "Правно одрекување",
-  seoTitle: "Одрекување | iplaw.nexa.mk",
-  seoDescription: "Правно одрекување за iplaw.nexa.mk.",
+  seoTitle: "Правно одрекување | iplaw.nexa.mk",
+  seoDescription: "Правно одрекување за iplaw.nexa.mk — содржината не претставува правен совет.",
   h1: "Правно одрекување",
   hero: "default",
   blocks: [
-    {
-      kind: "p",
-      text:
-        "Ова е јавен ресурс за информативни цели. Содржината е базирана на Законот за индустриска сопственост (Сл. весник на РМ, со последователни измени) и Законот за авторското право и сродните права (Сл. весник на РМ бр. 115/10, со измени). Не претставува правен совет. За конкретен случај, контактирајте овластен застапник или адвокат.",
-    },
+    { kind: "p", text: "Содржината на iplaw.nexa.mk претставува општи правни и информативни содржини и не претставува правен совет, понуда за услуги ниту комерцијална презентација. Прегледувањето или користењето на сајтот не создава адвокатско-клиентски однос со Nexa." },
+    { kind: "p", text: "Содржината е базирана на Законот за индустриска сопственост (Сл. весник на РМ, со последователни измени) и Законот за авторското право и сродните права (Сл. весник на РМ бр. 115/10, со измени), како и на меѓународни договори (Парижа, ПЦТ, Мадрид, Хаг, Берн, TRIPS) во кои Северна Македонија е држава-членка." },
+    { kind: "p", text: "За индивидуален правен совет, контактирајте лиценциран адвокат. Официјалниот именик на активни адвокати во Република Северна Македонија е достапен на mba.org.mk." },
   ],
   lastReviewed: LAST_REVIEWED,
 };
@@ -2412,16 +2591,14 @@ const discMk: PageContent = {
 const discEn: PageContent = {
   routeKey: "disclaimer",
   title: "Legal disclaimer",
-  seoTitle: "Disclaimer | iplaw.nexa.mk",
-  seoDescription: "Legal disclaimer for iplaw.nexa.mk.",
+  seoTitle: "Legal disclaimer | iplaw.nexa.mk",
+  seoDescription: "Legal disclaimer for iplaw.nexa.mk — content does not constitute legal advice.",
   h1: "Legal disclaimer",
   hero: "default",
   blocks: [
-    {
-      kind: "p",
-      text:
-        "This is a public resource for informational purposes. Content is based on the Law on Industrial Property (Official Gazette of RM, as amended) and the Law on Copyright and Related Rights (Official Gazette of RM No. 115/10, as amended). It does not constitute legal advice. For a specific case, contact a registered representative or attorney.",
-    },
+    { kind: "p", text: "The content on iplaw.nexa.mk is general legal and informational material and does not constitute legal advice, an offer of services, or a commercial communication. Viewing or using the site does not create a lawyer-client relationship with Nexa." },
+    { kind: "p", text: "Content is based on the Law on Industrial Property (Official Gazette of RM, as amended) and the Law on Copyright and Related Rights (Official Gazette of RM No. 115/10, as amended), as well as international treaties (Paris, PCT, Madrid, Hague, Berne, TRIPS) to which North Macedonia is a party." },
+    { kind: "p", text: "For individual legal advice, contact a licensed attorney. The official directory of active attorneys in the Republic of North Macedonia is available at mba.org.mk." },
   ],
   lastReviewed: LAST_REVIEWED,
 };
@@ -2568,6 +2745,7 @@ export const CONTENT: Record<Locale, Record<RouteKey, PageContent>> = {
     "glossary": glossaryMk,
     "faq": faqMk,
     "contact": contactMk,
+    "about": aboutMk,
     "sources": sourcesMk,
     "privacy": privMk,
     "terms": termsMk,
@@ -2601,6 +2779,7 @@ export const CONTENT: Record<Locale, Record<RouteKey, PageContent>> = {
     "glossary": glossaryEn,
     "faq": faqEn,
     "contact": contactEn,
+    "about": aboutEn,
     "sources": sourcesEn,
     "privacy": privEn,
     "terms": termsEn,
