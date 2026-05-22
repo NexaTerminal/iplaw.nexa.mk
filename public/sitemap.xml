@@ -7,7 +7,7 @@
     <priority>1.0</priority>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk'/>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/en</loc>
@@ -16,7 +16,7 @@
     <priority>1.0</priority>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en'/>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/mk/sto-e-intelektualna-sopstvenost</loc>
@@ -25,7 +25,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/sto-e-intelektualna-sopstvenost'/>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/what-is-intellectual-property'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/sto-e-intelektualna-sopstvenost'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/what-is-intellectual-property'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/en/what-is-intellectual-property</loc>
@@ -34,7 +34,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/what-is-intellectual-property'/>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/sto-e-intelektualna-sopstvenost'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/sto-e-intelektualna-sopstvenost'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/what-is-intellectual-property'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/mk/trgovska-marka</loc>
@@ -43,7 +43,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/trgovska-marka'/>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/trademark'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/trgovska-marka'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/trademark'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/en/trademark</loc>
@@ -52,7 +52,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/trademark'/>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/trgovska-marka'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/trgovska-marka'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/trademark'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/mk/trgovska-marka/procedura</loc>
@@ -61,7 +61,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/trgovska-marka/procedura'/>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/trademark/procedure'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/trgovska-marka/procedura'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/trademark/procedure'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/en/trademark/procedure</loc>
@@ -70,7 +70,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/trademark/procedure'/>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/trgovska-marka/procedura'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/trgovska-marka/procedura'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/trademark/procedure'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/mk/trgovska-marka/taksi-i-troshoci</loc>
@@ -79,7 +79,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/trgovska-marka/taksi-i-troshoci'/>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/trademark/fees'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/trgovska-marka/taksi-i-troshoci'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/trademark/fees'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/en/trademark/fees</loc>
@@ -88,7 +88,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/trademark/fees'/>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/trgovska-marka/taksi-i-troshoci'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/trgovska-marka/taksi-i-troshoci'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/trademark/fees'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/mk/trgovska-marka/obnovuvanje</loc>
@@ -97,7 +97,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/trgovska-marka/obnovuvanje'/>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/trademark/renewal'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/trgovska-marka/obnovuvanje'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/trademark/renewal'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/en/trademark/renewal</loc>
@@ -106,7 +106,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/trademark/renewal'/>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/trgovska-marka/obnovuvanje'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/trgovska-marka/obnovuvanje'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/trademark/renewal'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/mk/trgovska-marka/prigovor</loc>
@@ -115,7 +115,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/trgovska-marka/prigovor'/>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/trademark/opposition'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/trgovska-marka/prigovor'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/trademark/opposition'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/en/trademark/opposition</loc>
@@ -124,7 +124,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/trademark/opposition'/>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/trgovska-marka/prigovor'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/trgovska-marka/prigovor'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/trademark/opposition'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/mk/trgovska-marka/megunarodna-zashtita-madrid</loc>
@@ -133,7 +133,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/trgovska-marka/megunarodna-zashtita-madrid'/>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/trademark/madrid-international-protection'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/trgovska-marka/megunarodna-zashtita-madrid'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/trademark/madrid-international-protection'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/en/trademark/madrid-international-protection</loc>
@@ -142,7 +142,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/trademark/madrid-international-protection'/>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/trgovska-marka/megunarodna-zashtita-madrid'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/trgovska-marka/megunarodna-zashtita-madrid'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/trademark/madrid-international-protection'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/mk/patent</loc>
@@ -151,7 +151,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/patent'/>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/patent'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/patent'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/patent'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/en/patent</loc>
@@ -160,7 +160,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/patent'/>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/patent'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/patent'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/patent'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/mk/patent/procedura</loc>
@@ -169,7 +169,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/patent/procedura'/>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/patent/procedure'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/patent/procedura'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/patent/procedure'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/en/patent/procedure</loc>
@@ -178,7 +178,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/patent/procedure'/>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/patent/procedura'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/patent/procedura'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/patent/procedure'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/mk/patent/pct</loc>
@@ -187,7 +187,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/patent/pct'/>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/patent/pct'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/patent/pct'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/patent/pct'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/en/patent/pct</loc>
@@ -196,7 +196,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/patent/pct'/>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/patent/pct'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/patent/pct'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/patent/pct'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/mk/patent/evropski-patent</loc>
@@ -205,7 +205,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/patent/evropski-patent'/>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/patent/european-patent'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/patent/evropski-patent'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/patent/european-patent'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/en/patent/european-patent</loc>
@@ -214,7 +214,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/patent/european-patent'/>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/patent/evropski-patent'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/patent/evropski-patent'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/patent/european-patent'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/mk/patent/sertifikat-za-dopolnitelna-zashtita</loc>
@@ -223,7 +223,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/patent/sertifikat-za-dopolnitelna-zashtita'/>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/patent/supplementary-protection-certificate'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/patent/sertifikat-za-dopolnitelna-zashtita'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/patent/supplementary-protection-certificate'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/en/patent/supplementary-protection-certificate</loc>
@@ -232,7 +232,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/patent/supplementary-protection-certificate'/>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/patent/sertifikat-za-dopolnitelna-zashtita'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/patent/sertifikat-za-dopolnitelna-zashtita'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/patent/supplementary-protection-certificate'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/mk/industriski-dizajn</loc>
@@ -241,7 +241,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/industriski-dizajn'/>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/industrial-design'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/industriski-dizajn'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/industrial-design'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/en/industrial-design</loc>
@@ -250,7 +250,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/industrial-design'/>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/industriski-dizajn'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/industriski-dizajn'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/industrial-design'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/mk/industriski-dizajn/procedura</loc>
@@ -259,7 +259,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/industriski-dizajn/procedura'/>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/industrial-design/procedure'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/industriski-dizajn/procedura'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/industrial-design/procedure'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/en/industrial-design/procedure</loc>
@@ -268,7 +268,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/industrial-design/procedure'/>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/industriski-dizajn/procedura'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/industriski-dizajn/procedura'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/industrial-design/procedure'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/mk/industriski-dizajn/obnovuvanje</loc>
@@ -277,7 +277,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/industriski-dizajn/obnovuvanje'/>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/industrial-design/renewal'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/industriski-dizajn/obnovuvanje'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/industrial-design/renewal'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/en/industrial-design/renewal</loc>
@@ -286,7 +286,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/industrial-design/renewal'/>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/industriski-dizajn/obnovuvanje'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/industriski-dizajn/obnovuvanje'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/industrial-design/renewal'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/mk/industriski-dizajn/haski-sistem</loc>
@@ -295,7 +295,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/industriski-dizajn/haski-sistem'/>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/industrial-design/hague-system'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/industriski-dizajn/haski-sistem'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/industrial-design/hague-system'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/en/industrial-design/hague-system</loc>
@@ -304,7 +304,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/industrial-design/hague-system'/>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/industriski-dizajn/haski-sistem'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/industriski-dizajn/haski-sistem'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/industrial-design/hague-system'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/mk/avtorsko-pravo</loc>
@@ -313,7 +313,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/avtorsko-pravo'/>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/copyright'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/avtorsko-pravo'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/copyright'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/en/copyright</loc>
@@ -322,7 +322,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/copyright'/>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/avtorsko-pravo'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/avtorsko-pravo'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/copyright'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/mk/avtorsko-pravo/trajanje</loc>
@@ -331,7 +331,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/avtorsko-pravo/trajanje'/>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/copyright/duration'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/avtorsko-pravo/trajanje'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/copyright/duration'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/en/copyright/duration</loc>
@@ -340,7 +340,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/copyright/duration'/>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/avtorsko-pravo/trajanje'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/avtorsko-pravo/trajanje'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/copyright/duration'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/mk/avtorsko-pravo/sopstvenost-i-licenci</loc>
@@ -349,7 +349,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/avtorsko-pravo/sopstvenost-i-licenci'/>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/copyright/ownership-and-licensing'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/avtorsko-pravo/sopstvenost-i-licenci'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/copyright/ownership-and-licensing'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/en/copyright/ownership-and-licensing</loc>
@@ -358,7 +358,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/copyright/ownership-and-licensing'/>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/avtorsko-pravo/sopstvenost-i-licenci'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/avtorsko-pravo/sopstvenost-i-licenci'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/copyright/ownership-and-licensing'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/mk/avtorsko-pravo/kompjuterski-programi</loc>
@@ -367,7 +367,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/avtorsko-pravo/kompjuterski-programi'/>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/copyright/software'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/avtorsko-pravo/kompjuterski-programi'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/copyright/software'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/en/copyright/software</loc>
@@ -376,7 +376,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/copyright/software'/>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/avtorsko-pravo/kompjuterski-programi'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/avtorsko-pravo/kompjuterski-programi'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/copyright/software'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/mk/avtorsko-pravo/srodni-prava</loc>
@@ -385,7 +385,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/avtorsko-pravo/srodni-prava'/>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/copyright/related-rights'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/avtorsko-pravo/srodni-prava'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/copyright/related-rights'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/en/copyright/related-rights</loc>
@@ -394,7 +394,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/copyright/related-rights'/>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/avtorsko-pravo/srodni-prava'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/avtorsko-pravo/srodni-prava'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/copyright/related-rights'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/mk/geografski-oznaki</loc>
@@ -403,7 +403,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/geografski-oznaki'/>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/geographical-indications'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/geografski-oznaki'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/geographical-indications'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/en/geographical-indications</loc>
@@ -412,7 +412,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/geographical-indications'/>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/geografski-oznaki'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/geografski-oznaki'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/geographical-indications'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/mk/zashtita-i-carina</loc>
@@ -421,7 +421,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/zashtita-i-carina'/>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/enforcement-and-customs'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/zashtita-i-carina'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/enforcement-and-customs'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/en/enforcement-and-customs</loc>
@@ -430,7 +430,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/enforcement-and-customs'/>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/zashtita-i-carina'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/zashtita-i-carina'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/enforcement-and-customs'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/mk/poimnik</loc>
@@ -439,7 +439,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/poimnik'/>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/glossary'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/poimnik'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/glossary'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/en/glossary</loc>
@@ -448,7 +448,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/glossary'/>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/poimnik'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/poimnik'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/glossary'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/mk/chesti-prashanja</loc>
@@ -457,7 +457,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/chesti-prashanja'/>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/faq'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/chesti-prashanja'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/faq'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/en/faq</loc>
@@ -466,7 +466,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/faq'/>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/chesti-prashanja'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/chesti-prashanja'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/faq'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/mk/kontakt</loc>
@@ -475,7 +475,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/kontakt'/>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/contact'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/kontakt'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/contact'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/en/contact</loc>
@@ -484,7 +484,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/contact'/>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/kontakt'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/kontakt'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/contact'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/mk/za-nas</loc>
@@ -493,7 +493,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/za-nas'/>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/about'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/za-nas'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/about'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/en/about</loc>
@@ -502,7 +502,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/about'/>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/za-nas'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/za-nas'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/about'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/mk/izvori</loc>
@@ -511,7 +511,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/izvori'/>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/sources'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/izvori'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/sources'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/en/sources</loc>
@@ -520,7 +520,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/sources'/>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/izvori'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/izvori'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/sources'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/mk/privatnost</loc>
@@ -529,7 +529,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/privatnost'/>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/privacy'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/privatnost'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/privacy'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/en/privacy</loc>
@@ -538,7 +538,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/privacy'/>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/privatnost'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/privatnost'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/privacy'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/mk/uslovi</loc>
@@ -547,7 +547,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/uslovi'/>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/terms'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/uslovi'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/terms'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/en/terms</loc>
@@ -556,7 +556,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/terms'/>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/uslovi'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/uslovi'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/terms'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/mk/odrekuvanje</loc>
@@ -565,7 +565,7 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/odrekuvanje'/>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/disclaimer'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/odrekuvanje'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/disclaimer'/>
   </url>
   <url>
     <loc>https://iplaw.nexa.mk/en/disclaimer</loc>
@@ -574,6 +574,6 @@
     <priority>0.7</priority>
     <xhtml:link rel='alternate' hreflang='en' href='https://iplaw.nexa.mk/en/disclaimer'/>
     <xhtml:link rel='alternate' hreflang='mk' href='https://iplaw.nexa.mk/mk/odrekuvanje'/>
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/mk/odrekuvanje'/>
+    <xhtml:link rel='alternate' hreflang='x-default' href='https://iplaw.nexa.mk/en/disclaimer'/>
   </url>
 </urlset>

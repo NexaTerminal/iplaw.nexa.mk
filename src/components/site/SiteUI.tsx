@@ -57,18 +57,31 @@ export function Header({ locale, currentKey }: { locale: Locale; currentKey?: Ro
     <header className="sticky top-0 z-40 bg-white/85 backdrop-blur border-b border-[var(--color-ink-200)]">
       <div className="max-w-6xl mx-auto px-6 lg:px-8 flex items-center h-16 gap-4">
         <Link
-          to={pathFor("home", locale)}
+          to="/en"
           aria-label={t(locale, "header.thisSiteHome")}
-          className="flex items-center shrink-0"
+          className="flex items-center shrink-0 gap-3"
         >
           <img
             src="/nexa-logo-navbar.png"
             alt="Nexa"
-            width={62}
-            height={22}
-            className="h-[22px] w-auto"
+            width={90}
+            height={32}
+            className="h-[28px] md:h-[32px] w-auto"
           />
+          <span className="hidden sm:inline-block w-px h-6 bg-[var(--color-ink-300)]" aria-hidden="true" />
+          <span className="hidden sm:inline-block text-sm font-semibold text-[var(--color-ink-800)] whitespace-nowrap">
+            {t(locale, "site.lockup")}
+          </span>
         </Link>
+        <a
+          href="https://nexa.mk"
+          target="_blank"
+          rel="noopener"
+          className="hidden md:inline-flex items-center gap-1 rounded-full bg-[var(--color-brand-50)] text-[var(--color-brand-700)] ring-1 ring-[var(--color-brand-200)] px-2.5 py-1 text-[11px] font-medium hover:bg-[var(--color-brand-100)]"
+          aria-label={t(locale, "header.skipToNexa")}
+        >
+          {t(locale, "header.partOfNexa")} <ExternalLink size={11} />
+        </a>
         <nav className="hidden lg:flex items-center gap-1 text-sm ml-auto" aria-label="Primary">
           <Link
             to={pathFor("what-is-ip", locale)}
@@ -300,7 +313,7 @@ export function Footer({ locale }: { locale: Locale }) {
           <ul className="mt-3 space-y-1 text-[var(--color-ink-700)]">
             <li className="text-[var(--color-ink-600)]">{t(locale, "footer.contact.entity")}</li>
             <li>{t(locale, "footer.contact.address")}</li>
-            <li><a href="tel:+38978534258" className="hover:text-[var(--color-brand-700)]">078 534 258</a></li>
+            <li><a href="tel:+38978534258" className="hover:text-[var(--color-brand-700)]">+389 78 534 258</a></li>
             <li><a href="mailto:info@nexa.mk" className="hover:text-[var(--color-brand-700)]">info@nexa.mk</a></li>
           </ul>
         </div>
@@ -310,7 +323,7 @@ export function Footer({ locale }: { locale: Locale }) {
         <div className="max-w-6xl mx-auto px-6 lg:px-8 py-4 flex flex-wrap items-center justify-between gap-3 text-xs text-[var(--color-ink-500)]">
           <div className="flex items-center gap-3">
             <LanguageSwitcher locale={locale} />
-            <span>{t(locale, "footer.copyright", { year })} — {t(locale, "footer.ecosystem")}.</span>
+            <span>{t(locale, "footer.copyright", { year })}</span>
           </div>
           <div className="flex items-center gap-4">
             <a href="https://ippo.gov.mk" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 hover:text-[var(--color-brand-700)]">

@@ -195,8 +195,9 @@ export function buildHead(locale: Locale, routeKey: RouteKey) {
   if (!page) return { meta: [], links: [], scripts: [] };
   const canonical = `${SITE_URL}${pathFor(routeKey, locale)}`;
   const altOther = `${SITE_URL}${alternateOf(routeKey, locale)}`;
-  const altDefault = `${SITE_URL}${pathFor(routeKey, "mk")}`;
-  const title = page.seoTitle ?? `${page.title} | iplaw.nexa.mk`;
+  const altDefault = `${SITE_URL}${pathFor(routeKey, "en")}`;
+  const baseTitle = page.seoTitle ?? page.title;
+  const title = /·\s*Nexa$/.test(baseTitle) ? baseTitle : `${baseTitle} · Nexa`;
   const ogLocale = locale === "mk" ? "mk_MK" : "en_US";
   const ogLocaleAlt = locale === "mk" ? "en_US" : "mk_MK";
   const ogImage = `${SITE_URL}/nexa-logo-navbar.png`;
@@ -341,9 +342,12 @@ export function buildHead(locale: Locale, routeKey: RouteKey) {
       { property: "og:type", content: isPillarOrSub ? "article" : "website" },
       { property: "og:url", content: canonical },
       { property: "og:image", content: ogImage },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "IP Law — part of the Nexa ecosystem" },
       { property: "og:locale", content: ogLocale },
       { property: "og:locale:alternate", content: ogLocaleAlt },
-      { property: "og:site_name", content: "iplaw.nexa.mk" },
+      { property: "og:site_name", content: "IP Law · Nexa" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: title },
       { name: "twitter:description", content: page.seoDescription },

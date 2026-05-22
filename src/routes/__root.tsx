@@ -11,9 +11,10 @@ import {
 
 import appCss from "../styles.css?url";
 
-const DEFAULT_TITLE = "iplaw.nexa.mk — Intellectual Property Guide for North Macedonia · Nexa";
+const DEFAULT_TITLE = "IP Law — Intellectual Property in North Macedonia · Nexa";
 const DEFAULT_DESCRIPTION =
   "Bilingual guide to trademarks, patents, industrial designs, copyright and geographical indications in North Macedonia. Part of the Nexa ecosystem.";
+// TODO: replace with a real 1200x630 social card (currently uses the navbar logo).
 const DEFAULT_OG_IMAGE = "https://iplaw.nexa.mk/nexa-logo-navbar.png";
 const SITE_URL = "https://iplaw.nexa.mk";
 
@@ -21,8 +22,17 @@ const ORGANIZATION_JSONLD = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Nexa",
+  legalName: "NEKSA AMD DOOEL",
   url: "https://nexa.mk",
-  logo: "https://iplaw.nexa.mk/nexa-logo-navbar.png",
+  logo: "https://nexa.mk/nexa-logo-navbar.png",
+  email: "info@nexa.mk",
+  telephone: "+389-78-534-258",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Bul. Partizanski Odredi 102/2-14",
+    addressLocality: "Skopje",
+    addressCountry: "MK",
+  },
   sameAs: [
     "https://samodaprasham.mk",
     "https://immigration.mk",
@@ -36,10 +46,10 @@ const ORGANIZATION_JSONLD = JSON.stringify({
 const WEBSITE_JSONLD = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "iplaw.nexa.mk",
-  url: SITE_URL,
-  inLanguage: ["mk", "en"],
-  publisher: { "@type": "Organization", name: "Nexa", url: "https://nexa.mk" },
+  name: "IP Law",
+  url: `${SITE_URL}/en`,
+  inLanguage: "en",
+  publisher: { "@type": "Organization", name: "Nexa", legalName: "NEKSA AMD DOOEL" },
 });
 
 function NotFoundComponent() {
@@ -53,7 +63,7 @@ function NotFoundComponent() {
         </p>
         <div className="mt-6">
           <Link
-            to="/mk"
+            to="/en"
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
             Go home
@@ -88,7 +98,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
             Try again
           </button>
           <a
-            href="/mk"
+            href="/en"
             className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
           >
             Go home
@@ -109,12 +119,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "author", content: "Nexa" },
       { name: "publisher", content: "Nexa" },
       { name: "geo.region", content: "MK" },
-      { name: "geo.placename", content: "Skopje" },
-      { property: "og:site_name", content: "iplaw.nexa.mk" },
+      { name: "geo.placename", content: "Skopje, North Macedonia" },
+      { name: "geo.position", content: "41.9981;21.4254" },
+      { name: "ICBM", content: "41.9981, 21.4254" },
+      { property: "og:site_name", content: "IP Law · Nexa" },
       { property: "og:title", content: DEFAULT_TITLE },
       { property: "og:description", content: DEFAULT_DESCRIPTION },
       { property: "og:type", content: "website" },
       { property: "og:image", content: DEFAULT_OG_IMAGE },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "IP Law — part of the Nexa ecosystem" },
+      { property: "og:locale", content: "en_US" },
+      { property: "og:locale:alternate", content: "mk_MK" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: DEFAULT_TITLE },
       { name: "twitter:description", content: DEFAULT_DESCRIPTION },
@@ -151,7 +168,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: React.ReactNode }) {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const lang = pathname.startsWith("/en") ? "en" : "mk";
+  const lang = pathname.startsWith("/mk") ? "mk" : "en";
   return (
     <html lang={lang}>
       <head>
